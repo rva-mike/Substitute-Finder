@@ -46,7 +46,6 @@ import Close from '@mui/icons-material/Close';
 import CalendarToday from '@mui/icons-material/CalendarToday';
 import Create from '@mui/icons-material/Create';
 
-
 const PREFIX = 'Demo';
 const classes = {
   content: `${PREFIX}-content`,
@@ -300,7 +299,7 @@ export default class Demo extends React.PureComponent {
     super(props);
     this.state = {
       data: [],
-      currentDate: '2018-06-27',
+      currentDate: '2022-10-25', 
       confirmationVisible: false,
       editingFormVisible: false,
       deletedAppointmentId: undefined,
