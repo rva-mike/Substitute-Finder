@@ -16,21 +16,62 @@ code {
 .react-calendar {
   max-width: 800px !important;
   width: 600px !important;
-  height: 450px;
+  max-height: 700px;
   flex-grow: 3;
   font-size: 20px;
+  /* -webkit-box-shadow: 3px 4px 10px -3px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 3px 4px 10px -3px rgba(0, 0, 0, 0.29);
+  box-shadow: 3px 4px 10px -3px rgba(0, 0, 0, 0.29); */
+  /* background-color: hsl(191, 98%, 56%, 0.1)  !important;
+  background-image: linear-gradient(19deg, hsl(191, 98%, 56%, 0.1) 0%, hsl(281, 100%, 56%, 0.1) 100%) !important; */
+
+
+  /* background: linear-gradient(90deg, rgba(2, 0, 36, 0.1) 0%, rgba(9, 9, 121, 0.11401425178147273) 35%, rgba(0, 212, 255, 0.1) 100%) !important; */
+
+
+  /* background-color: hsl(52, 100%, 62%, 0.1);
+  background-image: linear-gradient(147deg, hsl(52, 100%, 62%, 0.1) 0%, hsl(0, 100%, 57%, 0.1) 74%) !important; */
+
+  /* background-color: hsl(202, 100%, 46%, 0.1);
+  background-image: linear-gradient(160deg, hsl(202, 100%, 46%, 0.1) 0%, hsl(173, 46%, 66%, 0.3) 100%) !important; */
+
+
+
+  /* this one */
+  /* background-color: hsl(210, 95%, 77%);
+  background-image: linear-gradient(62deg, hsl(210, 95%, 77%, 0.3) 0%, hsl(271, 90%, 88%, 0.2) 100%) !important; */
+
+  /* background-color: hsl(230, 60%, 54%);
+  background-image: linear-gradient(43deg, hsl(230, 60%, 54%, 0.2) 0%, hsl(304, 52%, 55%, 0.2) 46%, hsl(39, 100%, 72%, 0.2) 100%) !important; */
 
 
 }
 
 
 .react-calendar button {
-  margin-bottom: 20px !important;
+  margin-bottom: 15px !important;
 }
 
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 13px !important;
+  margin-left: 13px !important;
+}
+
+.react-calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+
+}
 
 .react-calendar__tile {
-  font-size: 20px;
+  font-size: 25px;
+  margin: 20px 0px !important;
 
 }
 
@@ -46,16 +87,13 @@ code {
 }
 
 
-.icon {
-  padding-bottom: 5px !important;
-}
-
 
 .nav-bar {
+  margin-left: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.1);
   background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
@@ -78,44 +116,52 @@ code {
   background-position: 0 0;
   background-color: #222;
 }
+
 @-moz-keyframes shimmer {
   0% {
     background-position: top left;
   }
+
   100% {
     background-position: top right;
   }
 }
+
 @-webkit-keyframes shimmer {
   0% {
     background-position: top left;
   }
+
   100% {
     background-position: top right;
   }
 }
+
 @-o-keyframes shimmer {
   0% {
     background-position: top left;
   }
+
   100% {
     background-position: top right;
   }
 }
+
 @keyframes shimmer {
   0% {
     background-position: top left;
   }
+
   100% {
     background-position: top right;
   }
-  
-  
+
+
 }
 
 
 .nav {
-  color: rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.1);
   background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
   background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
@@ -138,35 +184,83 @@ code {
   background-position: 0 0;
   background-color: #222;
 }
+
 @-moz-keyframes shimmer {
   0% {
     background-position: top left;
   }
+
   100% {
     background-position: top right;
   }
 }
+
 @-webkit-keyframes shimmer {
   0% {
     background-position: top left;
   }
+
   100% {
     background-position: top right;
   }
 }
+
 @-o-keyframes shimmer {
   0% {
     background-position: top left;
   }
+
   100% {
     background-position: top right;
   }
 }
+
 @keyframes shimmer {
   0% {
     background-position: top left;
   }
+
   100% {
     background-position: top right;
   }
 }
+
+
+.react-calendar__tile--active {
+  height: 35px !important;
+}
+
+.react-calendar__year-view__months__month {
+  height: 20px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 450px) {
+  /* .react-calendar__tile {
+    font-size: 30px !important;
+    margin: 5px 0px !important;
+  
+  } */
+
+
+  /* .react-calendar {
+    max-width: 800px !important;
+    width: 600px !important;
+    max-height: 200px;
+    flex-grow: 3;
+    font-size: 15px !important;
+    margin-top: 30px;
+  } */
+
+
+  .react-calendar__navigation__label__labelText{
+    font-size: 20px;
+    margin-top: 10px !important;
+  }
+
+
+  .react-calendar__navigation{
+    margin-top: 10px !important;
+
+  }
+} 
