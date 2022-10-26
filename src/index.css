@@ -19,7 +19,7 @@ code {
   max-height: 700px;
   flex-grow: 3;
   font-size: 20px;
-  margin-top: -40px !important;
+  /* margin-top: -60px !important; */
   /* -webkit-box-shadow: 3px 4px 10px -3px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: 3px 4px 10px -3px rgba(0, 0, 0, 0.29);
   box-shadow: 3px 4px 10px -3px rgba(0, 0, 0, 0.29); */
@@ -62,10 +62,10 @@ button {
 }
 
 .react-calendar {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
   border-radius: 10px;
 
 }
@@ -80,10 +80,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center !important;
-  flex-direction: row;
-  position: relative;
-  flex-grow: 2;
-  margin-top: 10%;
+  /* flex-grow: 2; */
+  margin-top: 50px;
 
 }
 
