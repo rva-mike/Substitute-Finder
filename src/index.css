@@ -263,4 +263,18 @@ button {
     margin-top: 10px !important;
 
   }
+
+  .react-calendar {
+    max-width: 375px !important;
+  }
+
+  .react-calendar__tile--active {
+    height: 30px !important;
+  }
+
+  .react-calendar__tile {
+    font-size: 20px !important;
+    margin: 20px 0px !important;
+  
+  }
 } 
