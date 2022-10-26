@@ -1,4 +1,16 @@
+## v2
 
+![Screen Shot 2022-10-25 at 9 06 51 PM](https://user-images.githubusercontent.com/105617274/197910890-da86542a-104a-4f1e-8e6b-cebec99f44ca.png)
+
+
+
+![Screen Shot 2022-10-25 at 9 07 12 PM](https://user-images.githubusercontent.com/105617274/197910856-bb1c671d-0156-427a-93cd-d1e3e967aaa5.png)
+
+
+
+
+
+### v1
 ![Screenshot_20221025_040241](https://user-images.githubusercontent.com/105617274/197872105-c15e9eed-f7e6-44d6-8454-fd9d3590fce3.png)
 
 
