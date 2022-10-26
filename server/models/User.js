@@ -1,4 +1,5 @@
 const {Schema, model, Types} = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema (
     {
@@ -17,7 +18,6 @@ const userSchema = new Schema (
         },
         mobile_phone: {
             type: String,
-            required: true
         },
         email: {
             type: String,

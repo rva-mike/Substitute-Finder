@@ -4,12 +4,27 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+        me: async (parent, args) => {
+            if (context.user) {
+                const userData = await User.findOne({})
+                .select('-__v -password')
+                .populate('admin_school')
+                .populate('locations_worked');
+    
+                return userData;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        },
         users: async () => {
             return User.find()
             .select('-__v -password')
-            .admin_school('friends')
-            .locations_worked('thoughts');
+            .populate('admin_school')
+            .populate('locations_worked');
         },
+        jobs: async (parent, start_datetime) => {
+            const params = start_datetime ? {start_datetime} : {};
+            return Job.find(params);
+        }
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -34,6 +49,13 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+        addJob: async (parent, args, context) => {
+            if (context.user) {
+                const job = await Job.create({...args, username: context.username})
+                return job;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+        }
     }
     
 }

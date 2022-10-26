@@ -9,7 +9,7 @@ const jobSchema = new Schema (
         create_user: {
             type: Schema.Types.ObjectId,
             ref: 'User',
-            required: true
+            // required: true
         },
         start_datetime: {
             type: Date,
@@ -29,12 +29,12 @@ const jobSchema = new Schema (
         },
         description: {
             type: String,
-            required: true,
+            // required: true,
         },
         school: {
             type: Schema.Types.ObjectId,
             ref: 'School',
-            required: true
+            // required: true
         },
         submitted_applications: [
             {
