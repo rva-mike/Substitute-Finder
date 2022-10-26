@@ -50,7 +50,7 @@ const jobSchema = new Schema (
       }
 );
 
-userSchema.virtual('submitted_applications').get(function () {
+jobSchema.virtual('submitted_apps').get(function () {
     return this.submitted_applications.length;
 });
 

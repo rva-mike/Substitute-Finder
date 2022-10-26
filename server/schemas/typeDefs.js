@@ -13,8 +13,8 @@ const typeDefs = gql`
         _id: ID
         status: String
         create_user: User
-        start_datetime: Date
-        end_datetime: Date
+        start_datetime: String
+        end_datetime: String
         subject: String
         grade_level: String
         description: String

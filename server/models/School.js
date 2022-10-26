@@ -23,10 +23,10 @@ const schoolSchema = new Schema (
             required: true
         },
         latitude: {
-            type: Double
+            type: String
         },
         longitude: {
-            type: Double
+            type: String
         }
     }
 )
