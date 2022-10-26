@@ -7,7 +7,7 @@ class App extends React.Component {
     // header
     header_h2__bold: "React",
     header_title: "Login System",
-    header_info: "Lorem Ipsum dolar...",
+    header_info: "Subatomic",
 
     // main
     main_title: "Login to our site",
