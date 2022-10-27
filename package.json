@@ -19,7 +19,7 @@
     "url": "https://github.com/rva-mike/Substitute-Finder/issues"
   },
   "homepage": "https://github.com/rva-mike/Substitute-Finder#readme",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^7.5.0"
   }
 }
