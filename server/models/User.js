@@ -10,11 +10,11 @@ const userSchema = new Schema (
         },
         first_name: {
             type: String,
-            required: true
+            // required: true
         },
         last_name: {
             type: String,
-            required: true
+            // required: true
         },
         mobile_phone: {
             type: String,
@@ -31,12 +31,18 @@ const userSchema = new Schema (
         },
         type: {
             type: String,
-            required: true
+            // required: true
         },
         admin_school: {
             type: Schema.Types.ObjectId,
             ref: 'School',
         },
+        jobs: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: 'Job'
+            }
+        ],
         locations_worked: [
             {
                 type: Schema.Types.ObjectId,

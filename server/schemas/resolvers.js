@@ -21,10 +21,13 @@ const resolvers = {
             .populate('admin_school')
             .populate('locations_worked');
         },
-        jobs: async (parent, start_datetime) => {
-            const params = start_datetime ? {start_datetime} : {};
-            return Job.find(params);
-        }
+        jobs: async (parent, { username }) => {
+            const params = username ? { username } : {};
+            return Job.find(params).sort({ createdAt: -1 });
+        },
+        job: async (parent, { _id }) => {
+            return Job.findOne({ _id });
+        },
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -55,7 +58,20 @@ const resolvers = {
                 return job;
             }
             throw new AuthenticationError('You need to be logged in!');
-        }
+        },
+        addCandidate: async (parent, { jobId, email }, context) => {
+            if (context.user) {
+              const updatedJob = await Job.findOneAndUpdate(
+                { _id: jobId },
+                { $push: { candidates: { email, username: context.user.username } } },
+                { new: true, runValidators: true }
+              );
+          
+              return updatedJob;
+            }
+          
+            throw new AuthenticationError('You need to be logged in!');
+        },
     }
     
 }

@@ -5,7 +5,7 @@ const jobSchema = new Schema (
     {
         status: {
             type: String,
-            required: true
+            // required: true
         },
         create_user: {
             type: Schema.Types.ObjectId,
@@ -14,32 +14,36 @@ const jobSchema = new Schema (
         },
         start_datetime: {
             type: Date,
-            required: true,
+            // required: true,
             get: timestamp => dateFormat(timestamp)
         },
         end_datetime: {
             type: Date,
-            required: true,
+            // required: true,
             get: timestamp => dateFormat(timestamp)
         },
         subject: {
             type: String,
-            required: true
+            // required: true
         },
         grade_level: {
             type: String,
-            required: true
+            // required: true
         },
         description: {
             type: String,
-            // required: true,
+            required: true,
         },
         school: {
             type: Schema.Types.ObjectId,
             ref: 'School',
             // required: true
         },
-        submitted_applications: [
+        username: {
+            type: String,
+            required: true
+        },
+        canidates: [
             {
                 type: Schema.Types.ObjectId,
                 ref: 'User'
@@ -53,8 +57,8 @@ const jobSchema = new Schema (
       }
 );
 
-jobSchema.virtual('submitted_apps').get(function () {
-    return this.submitted_applications.length;
+jobSchema.virtual('canidateCount').get(function () {
+    return this.canidates.length;
 });
 
 const Job = model('Job', jobSchema);

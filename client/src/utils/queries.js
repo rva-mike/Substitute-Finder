@@ -1,39 +1,35 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+export const QUERY_JOBS = gql`
+  query jobs($username: String) {
+    jobs(username: $username) {
       _id
-      thoughtText
-      createdAt
+      description
       username
-      reactionCount
-      reactions {
+      candidateCount
+      candidates {
         _id
-        createdAt
+        email
         username
-        reactionBody
       }
     }
   }
 `;
 
-export const QUERY_THOUGHT = gql`
-  query thought($id: ID!) {
-    thought(_id: $id) {
+export const QUERY_JOB = gql`
+query jobs($username: String) {
+  jobs(username: $username) {
+    _id
+    description
+    username
+    candidateCount
+    candidates {
       _id
-      thoughtText
-      createdAt
+      email
       username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
     }
   }
+}
 `;
 
 export const QUERY_USER = gql`
@@ -42,16 +38,9 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      friendCount
-      friends {
+      jobs {
         _id
-        username
-      }
-      thoughts {
-        _id
-        thoughtText
-        createdAt
-        reactionCount
+        desicription
       }
     }
   }
@@ -63,22 +52,15 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      friendCount
-      thoughts {
+      jobs {
         _id
-        thoughtText
-        createdAt
-        reactionCount
-        reactions {
+        description
+        candidateCount
+        candidates {
           _id
-          createdAt
-          reactionBody
+          email
           username
         }
-      }
-      friends {
-        _id
-        username
       }
     }
   }
@@ -90,11 +72,6 @@ export const QUERY_ME_BASIC = gql`
       _id
       username
       email
-      friendCount
-      friends {
-        _id
-        username
-      }
     }
   }
 `;
