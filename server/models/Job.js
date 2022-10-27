@@ -1,4 +1,5 @@
 const {Schema, model, Types} = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const jobSchema = new Schema (
     {
@@ -13,11 +14,13 @@ const jobSchema = new Schema (
         },
         start_datetime: {
             type: Date,
-            required: true
+            required: true,
+            get: timestamp => dateFormat(timestamp)
         },
         end_datetime: {
             type: Date,
-            required: true
+            required: true,
+            get: timestamp => dateFormat(timestamp)
         },
         subject: {
             type: String,
