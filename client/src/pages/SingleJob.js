@@ -25,8 +25,8 @@ const SingleJob = (props) => {
     <div>
       <div className="card mb-3">
         <p className="card-header">
-          <span style={{ fontWeight: 700 }} className="text-light">
-            {job.username}
+          <span style={{ fontWeight: 700 }} className="text-dark">
+            {job.username}&nbsp;
           </span>{' '}
           job on {job.createdAt}
         </p>
