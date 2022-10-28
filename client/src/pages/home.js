@@ -47,6 +47,11 @@ const Home = () => {
             <JobForm />
           </div>
         )}
+        {!loggedIn && (
+          <div>
+            <h3 >Welcome to Sub-Atomic!</h3>
+          </div>
+        )}
       </div>
     </main>
   );
