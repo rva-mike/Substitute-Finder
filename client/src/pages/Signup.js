@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
+    admin: false,
+    school: "",
   });
   const [addUser, { error }] = useMutation(ADD_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
+    const admin = document.getElementById("admin").checked;
+    const school = document.getElementById("school")?.value || "";
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
+      admin: admin,
+      school: school,
     });
+    console.log(formState);
   };
 
   // submit form
@@ -44,6 +50,13 @@ const Signup = () => {
           <h4 className="card-header">Sign Up</h4>
           <div className="card-body">
             <form onSubmit={handleFormSubmit}>
+              <label htmlFor="admin">Check box if administrator? </label>
+              <input
+                type={`checkbox`}
+                name="admin"
+                id="admin"
+                onMouseDown={handleChange}
+              ></input>
               <input
                 className="form-input"
                 placeholder="Your username"
@@ -71,6 +84,19 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
+              {formState.admin &&
+                <>
+                  <label htmlFor="school">Select your school </label>
+                  <select name="school" id="school" onChange={handleChange}>
+                    <option value="HTM Elementary">HTM Elementary</option>
+                    <option value="Code Academy">Code Academy</option>
+                    <option value="Express Middle School">
+                      Express Middle School
+                    </option>
+                    <option value="Performant High">Performant High</option>
+                  </select>
+                </>
+            }
               <button className="btn d-block w-100" type="submit">
                 Submit
               </button>
