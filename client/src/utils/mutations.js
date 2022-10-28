@@ -25,10 +25,10 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_JOB = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+  mutation addJob($jobText: String!) {
+    addJob(jobText: $jobText) {
       _id
-      thoughtText
+      jobText
       createdAt
       username
       reactionCount
@@ -40,8 +40,8 @@ export const ADD_JOB = gql`
 `;
 
 export const ADD_REACTION = gql`
-  mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
-    addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
+  mutation addReaction($jobId: ID!, $reactionBody: String!) {
+    addReaction(jobId: $jobId, reactionBody: $reactionBody) {
       _id
       reactionCount
       reactions {
