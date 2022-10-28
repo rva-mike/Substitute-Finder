@@ -130,9 +130,9 @@ nav a:hover, nav a:focus {
   font-size: xx-large;
  }
 
- /* .github-icon:hover {
-  color: #e4e4e4;
- } */
+ .github-icon:hover {
+  color: white;
+ }
 
 
 .page-title {
