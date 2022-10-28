@@ -31,7 +31,9 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #f3fffee1;
+  /* background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, hsl(204, 72%, 74%, 0.5) 0%, hsl(237, 57%, 74%, 0.5) 100%); */
+
 }
 
 h1,
@@ -47,7 +49,7 @@ h6 {
 }
 
 h1 {
-  font-size: 30px !important; 
+  font-size: 30px !important;
 }
 
 h2 {
@@ -106,6 +108,8 @@ nav a:hover {
   margin: 0;
   font-size: 2.5rem;
 }
+
+
 
 .btn,
 .pill {
@@ -187,8 +191,9 @@ nav a:hover {
   position: absolute;
   left: -9999px;
 }
-[type='radio']:checked + label,
-[type='radio']:not(:checked) + label {
+
+[type='radio']:checked+label,
+[type='radio']:not(:checked)+label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
@@ -198,8 +203,8 @@ nav a:hover {
   margin-right: 0.2rem;
 }
 
-[type='radio']:checked + label:before,
-[type='radio']:not(:checked) + label:before {
+[type='radio']:checked+label:before,
+[type='radio']:not(:checked)+label:before {
   content: '';
   position: absolute;
   left: 0;
@@ -210,8 +215,9 @@ nav a:hover {
   border-radius: 100%;
   background: #fff;
 }
-[type='radio']:checked + label:after,
-[type='radio']:not(:checked) + label:after {
+
+[type='radio']:checked+label:after,
+[type='radio']:not(:checked)+label:after {
   content: '';
   width: 12px;
   height: 12px;
@@ -224,13 +230,13 @@ nav a:hover {
   transition: all 0.2s ease;
 }
 
-[type='radio']:not(:checked) + label:after {
+[type='radio']:not(:checked)+label:after {
   opacity: 0;
   -webkit-transform: scale(0);
   transform: scale(0);
 }
 
-[type='radio']:checked + label:after {
+[type='radio']:checked+label:after {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
@@ -1172,6 +1178,73 @@ nav a:hover {
   .align-center-lg {
     align-items: center;
   }
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.559);
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 2s;
+  animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: #222;
+}
+
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
+
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
+
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+
+  100% {
+    background-position: top right;
+  }
+
+
 }
 
 /* col-xl */
