@@ -5,6 +5,8 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    degree: String
+    about: String
     friendCount: Int
     jobs: [Job]
     friends: [User]
@@ -45,6 +47,7 @@ const typeDefs = gql`
     addJob(jobText: String!): Job
     addReaction(jobId: ID!, reactionBody: String!): Job
     addFriend(friendId: ID!): User
+    updateMe(degree: String, about: String): User
   }
 `;
 

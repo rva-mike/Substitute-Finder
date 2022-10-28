@@ -20,6 +20,13 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    degree: {
+      type: Boolean,
+      default: false
+    },
+    about: {
+      type: String
+    },
     jobs: [
       {
         type: Schema.Types.ObjectId,

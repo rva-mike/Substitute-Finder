@@ -100,6 +100,16 @@ const resolvers = {
       }
 
       throw new AuthenticationError('You need to be logged in!');
+    },
+    updateMe: async (parent, {degree, about}, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          {_id: context.user._id},
+          {$set: {degree: degree, about: about}},
+          {new: true}
+        )
+        return updatedUser;
+      }
     }
   }
 };
