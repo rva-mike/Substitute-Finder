@@ -126,6 +126,10 @@ nav a:hover, nav a:focus {
   font-size: xx-large;
  }
 
+ .github-icon:hover {
+  color: #cadbda;
+ }
+
 
 .page-title {
   text-align: center;
@@ -266,11 +270,19 @@ input {
   flex-direction: column;
 }
 
+input {
+  cursor: pointer;
+  color: black;
+  caret-color: rgb(59, 59, 59);
 
+}
 
-
-
-
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black !important;
+}
 
 
 
