@@ -1236,6 +1236,18 @@ input {
   }
 }
 
+.gitlink {
+  text-decoration: none;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.559);
+
+}
+
+.gitlink:hover {
+  color: white;
+
+}
+
 
 .footer-text {
   display: flex !important;
@@ -1254,9 +1266,9 @@ input {
   -webkit-animation-name: shimmer;
   -moz-animation-name: shimmer;
   animation-name: shimmer;
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration: 2s;
-  animation-duration: 2.5s;
+  -webkit-animation-duration: 5s;
+  -moz-animation-duration: 5s;
+  animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
