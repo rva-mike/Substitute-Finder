@@ -7,6 +7,8 @@ const typeDefs = gql`
     email: String
     degree: String
     about: String
+    school: String
+    admin: Boolean
     friendCount: Int
     jobs: [Job]
     friends: [User]
@@ -43,11 +45,11 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!, school: String, admin: Boolean): Auth
     addJob(jobText: String!): Job
     addReaction(jobId: ID!, reactionBody: String!): Job
     addFriend(friendId: ID!): User
-    updateMe(degree: String, about: String): User
+    updateMe(email: String, degree: String, about: String): User
   }
 `;
 

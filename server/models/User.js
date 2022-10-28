@@ -27,6 +27,13 @@ const userSchema = new Schema(
     about: {
       type: String
     },
+    school: {
+      type: String
+    },
+    admin: {
+      type: Boolean,
+      default: false
+    },
     jobs: [
       {
         type: Schema.Types.ObjectId,
