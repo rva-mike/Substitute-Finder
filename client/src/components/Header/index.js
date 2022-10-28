@@ -14,10 +14,10 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-dark mb-4 py-2 flex-row align-center text-white">
+    <header className="bg-dark mb-3 py-2 flex-row align-center text-white">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <Link to="/">
-          <h1>Sub At<span className='icon'><FaReact/></span>mic</h1>
+          <h1 className='mb-1 mt-1 main-logo'>Sub At<span className='icon'><FaReact/></span>mic</h1>
         </Link>
 
         <nav className="text-center">

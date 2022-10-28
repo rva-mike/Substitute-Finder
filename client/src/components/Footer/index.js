@@ -4,10 +4,10 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-100 mt-auto bg-dark p-4 text-white">
+    <footer className="w-100 mt-auto bg-dark p-3 text-white">
       <div className="container footer-text">
         &copy;{new Date().getFullYear()} Built By React |
-        &nbsp;<FaGithub/>
+        &nbsp;<a target="_blank" rel="noopener noreferrer" href='https://github.com/rva-mike/Substitute-Finder'><FaGithub className='github-icon'/></a>
       </div>
     </footer>
   );
