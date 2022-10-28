@@ -257,6 +257,29 @@ input {
   transform: scale(1);
 }
 
+
+
+.login-form, .signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* LAYOUT */
 .container {
   width: 85%;
@@ -1350,3 +1373,6 @@ input {
     align-items: center;
   }
 }
+
+
+

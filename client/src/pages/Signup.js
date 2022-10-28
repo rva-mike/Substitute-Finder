@@ -49,7 +49,7 @@ const Signup = () => {
         <div className="card">
           <h4 className="card-header">Sign Up</h4>
           <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
+            <form className="signup-form" onSubmit={handleFormSubmit}>
               <label htmlFor="admin">Check box if administrator? </label>
               <input
                 type={`checkbox`}

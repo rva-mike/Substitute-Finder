@@ -45,7 +45,7 @@ const Login = (props) => {
         <div className="card">
           <h4 className="card-header">Login</h4>
           <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
+            <form className='login-form' onSubmit={handleFormSubmit}>
               <input
                 className="form-input"
                 placeholder="Your email"
