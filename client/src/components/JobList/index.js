@@ -12,13 +12,13 @@ const JobList = ({ jobs, title }) => {
       {jobs &&
         jobs.map(job => (
           <div key={job._id} className="card mb-3">
-            <p className="card-header">
+            <p className="card-header ">
               <Link
-                to={`/profile/${job.username}`}
+                to={`/profile/${job.username}`  }
                 style={{ fontWeight: 700 }}
-                className="text-light"
+                className="text-dark"
               >
-                {job.username}
+                {job.username} &nbsp;
               </Link>{' '}
               job on {job.createdAt}
             </p>
