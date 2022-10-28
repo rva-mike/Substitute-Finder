@@ -58,27 +58,60 @@ const JobForm = () => {
   };
 
   return (
-    <div>
-      <p
-        className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
-      >
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
-      <form
-        className="flex-row justify-center justify-space-between-md align-stretch"
-        onSubmit={handleFormSubmit}
-      >
-        <textarea
-          placeholder="Here's a new job..."
-          value={jobText}
-          className="form-input col-12 col-md-9"
-          onChange={handleChange}
-        ></textarea>
-        <button className="btn col-12 col-md-3" type="submit">
-          Submit
-        </button>
-      </form>
+    <div className='card'>
+      <h5 className="card-header">Create a new Job!</h5>
+      <div className="card-body">
+        <form
+          className="flex-row justify-center justify-space-between-md align-stretch"
+          onSubmit={handleFormSubmit}
+        >
+          <label>
+            Subject
+          </label>
+          <input
+            placeholder="Mathamatics, Social Studies, etc..."
+            type="text"
+            className="form-input col-12 col-md-12"
+            onChange={handleChange}
+          ></input>
+          <label>
+            Grade
+          </label>
+          <input
+            placeholder="4th, 9th, 11th, etc..."
+            type="text"
+            className="form-input col-12 col-md-12"
+            onChange={handleChange}
+          ></input>
+          <label>
+            Dates
+          </label>
+          <input
+            placeholder="(ex. November 12th-16th)"
+            type="text"
+            className="form-input col-12 col-md-12"
+            onChange={handleChange}
+          ></input>
+          <label>
+            Description
+          </label>
+          <textarea
+            placeholder="Your responsibilities will be..."
+            value={jobText}
+            className="form-input col-12 col-md-12"
+            onChange={handleChange}
+          ></textarea>
+          <p
+            className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
+          >
+            Character Count: {characterCount}/280
+            {error && <span className="ml-2">Something went wrong...</span>}
+          </p>
+          <button className="btn col-12 col-md-3" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

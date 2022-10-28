@@ -73,6 +73,10 @@ userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
 
+userSchema.virtual('jobCount').get(function() {
+  return this.jobs.length;
+});
+
 const User = model('User', userSchema);
 
 module.exports = User;

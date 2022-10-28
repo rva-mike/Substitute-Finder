@@ -64,6 +64,7 @@ export const QUERY_ME = gql`
       username
       email
       friendCount
+      admin
       jobs {
         _id
         jobText
@@ -90,7 +91,7 @@ export const QUERY_ME_BASIC = gql`
       _id
       username
       email
-      friendCount
+      admin
       friends {
         _id
         username
