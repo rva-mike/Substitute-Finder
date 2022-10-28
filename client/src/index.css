@@ -23,6 +23,7 @@ body {
   min-height: 100%;
 }
 
+
 body {
   margin: 0;
   padding: 0;
@@ -36,6 +37,10 @@ body {
 
   /* background-color: #4158D0;
 background-image: linear-gradient(43deg, hsl(230, 60%, 54%, 0.4) 0%, hsl(304, 52%, 55%, 0.4) 46%, hsl(39, 100%, 72%, 0.4) 100%); */
+
+/* background-color: #21D4FD;
+background-image: linear-gradient(19deg, hsl(191, 98%, 56%, 0.6) 0%, hsl(281, 100%, 56%, 0.6) 100%); */
+
 
 
 }
@@ -85,6 +90,7 @@ p {
 
 a {
   text-decoration: none !important;
+  color: inherit;
 }
 
 a:visited {
@@ -130,10 +136,14 @@ nav a:hover, nav a:focus {
 
 
 
+.sub-heading {
+  font-weight: 200;
+  font-size: 15px;
+}
 
 
 .main-logo:hover, .main-logo:focus {
-  color: white;
+  color: white !important;
 
 }
 
