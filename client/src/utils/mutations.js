@@ -28,26 +28,53 @@ export const ADD_JOB = gql`
   mutation addThought($thoughtText: String!) {
     addThought(thoughtText: $thoughtText) {
       _id
-      description
+      thoughtText
+      createdAt
       username
-      canidateCount
-      canidates {
+      reactionCount
+      reactions {
         _id
-        email
+      }
+    }
+  }
+`;
+
+export const ADD_REACTION = gql`
+  mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
+    addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
+      _id
+      reactionCount
+      reactions {
+        _id
+        reactionBody
+        createdAt
         username
       }
     }
   }
 `;
 
-export const ADD_CANDIDATE = gql`
-  mutation addCandidate($jobId: ID!, $username: String!) {
-    addCandidate(jobId: $jobId, username: $username) {
+export const ADD_FRIEND = gql`
+  mutation addFriend($id: ID!) {
+    addFriend(friendId: $id) {
       _id
-      canidateCount
-      canidates {
+      username
+      friendCount
+      friends {
         _id
-        email
+        username
+      }
+    }
+  }
+`;
+
+export const REMOVE_FRIEND = gql`
+  mutation removeFriend($id: ID!) {
+    removeFriend(id: $id) {
+      _id
+      username
+      friends {
+        _id
         username
       }
     }

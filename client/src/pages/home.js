@@ -28,7 +28,7 @@ const Home = () => {
           ) : (
             <JobList
               jobs={jobs}
-              title="Some pay for teachers..."
+              title="Some Feed for Job(s)..."
             />
           )}
         </div>
@@ -36,6 +36,8 @@ const Home = () => {
           <div className="col-12 col-lg-3 mb-3">
             <FriendList
               username={userData.me.username}
+              friendCount={userData.me.friendCount}
+              friends={userData.me.friends}
             />
           </div>
         ) : null}

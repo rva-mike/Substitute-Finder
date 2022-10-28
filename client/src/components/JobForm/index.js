@@ -5,7 +5,7 @@ import { ADD_JOB } from '../../utils/mutations';
 import { QUERY_JOBS, QUERY_ME } from '../../utils/queries';
 
 const JobForm = () => {
-  const [description, setText] = useState('');
+  const [jobText, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addJob, { error }] = useMutation(ADD_JOB, {
@@ -20,10 +20,10 @@ const JobForm = () => {
           data: { me: { ...me, jobs: [...me.jobs, addJob] } },
         });
       } catch (e) {
-        console.warn("First thought insertion by user!")
+        console.warn("First job insertion by user!")
       }
 
-      // update thought array's cache
+      // update job array's cache
       const { jobs } = cache.readQuery({ query: QUERY_JOBS });
       cache.writeQuery({
         query: QUERY_JOBS,
@@ -46,7 +46,7 @@ const JobForm = () => {
 
     try {
       await addJob({
-        variables: { description },
+        variables: { jobText },
       });
 
       // clear form value
@@ -70,8 +70,8 @@ const JobForm = () => {
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="Here's a job for you..."
-          value={description}
+          placeholder="Here's a new job..."
+          value={jobText}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>

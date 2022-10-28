@@ -7,11 +7,13 @@ import FriendList from '../components/FriendList';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { ADD_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Profile = (props) => {
   const { username: userParam } = useParams();
 
+  const [addFriend] = useMutation(ADD_FRIEND);
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
@@ -71,6 +73,8 @@ const Profile = (props) => {
         <div className="col-12 col-lg-3 mb-3">
           <FriendList
             username={user.username}
+            friendCount={user.friendCount}
+            friends={user.friends}
           />
         </div>
       </div>

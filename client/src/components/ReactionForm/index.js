@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
-import { ADD_CANDIDATE } from '../../utils/mutations';
+import { ADD_REACTION } from '../../utils/mutations';
 
-const CandidateForm = ({ jobId }) => {
-  const [email, setBody] = useState('');
+const ReactionForm = ({ jobId }) => {
+  const [reactionBody, setBody] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
-  const [addCandidate, { error }] = useMutation(ADD_CANDIDATE);
+  const [addReaction, { error }] = useMutation(ADD_REACTION);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -21,8 +21,8 @@ const CandidateForm = ({ jobId }) => {
     event.preventDefault();
 
     try {
-      await addCandidate({
-        variables: { reactionBody, thoughtId },
+      await addReaction({
+        variables: { reactionBody, jobId },
       });
 
       // clear form value
@@ -46,7 +46,7 @@ const CandidateForm = ({ jobId }) => {
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="Leave a reaction to this thought..."
+          placeholder="Leave a reaction to this job..."
           value={reactionBody}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
@@ -62,4 +62,4 @@ const CandidateForm = ({ jobId }) => {
   );
 };
 
-export default CandidateForm;
+export default ReactionForm;

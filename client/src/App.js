@@ -62,7 +62,7 @@ function App() {
                 element={<Profile />} 
               />
               <Route 
-                path="/thought/:id" 
+                path="/job/:id" 
                 element={<SingleJob />} 
               />
               <Route 

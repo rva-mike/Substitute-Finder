@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import CandidateList from '../components/CandidateList';
-import CandidateForm from '../components/CandidateForm';
+import ReactionList from '../components/ReactionList';
+import ReactionForm from '../components/ReactionForm';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
@@ -27,18 +27,19 @@ const SingleJob = (props) => {
         <p className="card-header">
           <span style={{ fontWeight: 700 }} className="text-light">
             {job.username}
-          </span>
+          </span>{' '}
+          job on {job.createdAt}
         </p>
         <div className="card-body">
-          <p>{job.description}</p>
+          <p>{job.jobText}</p>
         </div>
       </div>
 
-      {job.candidateCount > 0 && (
-        <JobList candidates={job.candidates} />
+      {job.reactionCount > 0 && (
+        <ReactionList reactions={job.reactions} />
       )}
 
-      {Auth.loggedIn() && <JobForm jobId={job._id} />}
+      {Auth.loggedIn() && <ReactionForm jobId={job._id} />}
     </div>
   );
 };

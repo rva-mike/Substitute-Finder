@@ -1,64 +1,35 @@
-const {Schema, model, Types} = require('mongoose');
+const { Schema, model } = require('mongoose');
+const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
-const jobSchema = new Schema (
-    {
-        status: {
-            type: String,
-            // required: true
-        },
-        create_user: {
-            type: Schema.Types.ObjectId,
-            ref: 'User',
-            // required: true
-        },
-        start_datetime: {
-            type: Date,
-            // required: true,
-            get: timestamp => dateFormat(timestamp)
-        },
-        end_datetime: {
-            type: Date,
-            // required: true,
-            get: timestamp => dateFormat(timestamp)
-        },
-        subject: {
-            type: String,
-            // required: true
-        },
-        grade_level: {
-            type: String,
-            // required: true
-        },
-        description: {
-            type: String,
-            required: true,
-        },
-        school: {
-            type: Schema.Types.ObjectId,
-            ref: 'School',
-            // required: true
-        },
-        username: {
-            type: String,
-            required: true
-        },
-        canidates: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'User'
-            }
-        ]
+const jobSchema = new Schema(
+  {
+    jobText: {
+      type: String,
+      required: 'You need to leave a job!',
+      minlength: 1,
+      maxlength: 280
     },
-    {
-        toJSON: {
-          virtuals: true,
-        },
-      }
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: timestamp => dateFormat(timestamp)
+    },
+    username: {
+      type: String,
+      required: true
+    },
+    reactions: [reactionSchema]
+  },
+  {
+    toJSON: {
+      getters: true
+    }
+  }
 );
 
-jobSchema.virtual('canidateCount').get(function () {
-    return this.canidates.length;
+jobSchema.virtual('reactionCount').get(function() {
+  return this.reactions.length;
 });
 
 const Job = model('Job', jobSchema);

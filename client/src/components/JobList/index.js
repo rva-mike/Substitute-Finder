@@ -20,13 +20,14 @@ const JobList = ({ jobs, title }) => {
               >
                 {job.username}
               </Link>{' '}
+              job on {job.createdAt}
             </p>
             <div className="card-body">
-              <Link to={`/thought/${job._id}`}>
-                <p>{job.description}</p>
+              <Link to={`/job/${job._id}`}>
+                <p>{job.jobText}</p>
                 <p className="mb-0">
-                  Candidates: {job.candidateCount} || Click to{' '}
-                  {job.candidateCount ? 'see' : 'start'} the discussion!
+                  Reactions: {job.reactionCount} || Click to{' '}
+                  {job.reactionCount ? 'see' : 'start'} the discussion!
                 </p>
               </Link>
             </div>
