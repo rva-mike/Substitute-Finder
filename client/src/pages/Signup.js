@@ -55,7 +55,7 @@ const Signup = () => {
                 type={`checkbox`}
                 name="admin"
                 id="admin"
-                onMouseDown={handleChange}
+                onChange={handleChange}
               ></input>
               <input
                 className="form-input"
