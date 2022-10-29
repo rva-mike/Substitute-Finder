@@ -17,10 +17,10 @@ const typeDefs = gql`
 
   type Job {
     _id: ID
-    jobText: String
     subject: String
     dates: String
     grade: String
+    description: String
     createdAt: String
     username: String
     reactionCount: Int
@@ -52,7 +52,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!, school: String, admin: Boolean): Auth
-    addJob(subject: String!, grade: String!, dates: String! jobText: String!): Job
+    addJob(subject: String!, grade: String!, dates: String! description: String!): Job
     addReaction(jobId: ID!, reactionBody: String!): Job
     addFriend(friendId: ID!): User
     updateMe(email: String, degree: String, about: String): User

@@ -28,10 +28,10 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_JOB = gql`
-  mutation addJob($subject: String!, $grade: String!, $dates: String!, $jobText: String!) {
-    addJob(subject: $subject, grade: $grade, dates: $dates, jobText: $jobText) {
+  mutation addJob($subject: String!, $grade: String!, $dates: String!, $description: String!) {
+    addJob(subject: $subject, grade: $grade, dates: $dates, description: $description) {
       _id
-      jobText
+      description
       subject
       grade
       dates

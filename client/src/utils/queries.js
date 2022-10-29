@@ -4,7 +4,7 @@ export const QUERY_JOBS = gql`
   query jobs($username: String) {
     jobs(username: $username) {
       _id
-      jobText
+      description
       createdAt
       username
       reactionCount
@@ -22,7 +22,7 @@ export const QUERY_JOB = gql`
   query job($id: ID!) {
     job(_id: $id) {
       _id
-      jobText
+      description
       createdAt
       username
       reactionCount
@@ -49,7 +49,7 @@ export const QUERY_USER = gql`
       }
       jobs {
         _id
-        jobText
+        description
         createdAt
         reactionCount
       }
@@ -67,7 +67,7 @@ export const QUERY_ME = gql`
       admin
       jobs {
         _id
-        jobText
+        description
         createdAt
         reactionCount
         reactions {
