@@ -18,8 +18,13 @@ const Home = () => {
   return (
     <main>
       <div className="flex-row justify-space-between">
+      {loggedIn && admin && (
+          <div className={`col-12 col-lg-3 mb-3`}>
+            <JobForm />
+          </div>
+        )}
         {loggedIn && !admin && (
-          <div className={`col-12 mb-3 col-lg-8'}`}>
+          <div className={`col-12 mb-3 col-lg-8`}>
             {loading ? (
               <div>Loading...</div>
             ) : (
@@ -31,7 +36,7 @@ const Home = () => {
           </div>
         )}
         {loggedIn && admin && (
-          <div className={`col-12 mb-3 col-lg-8'}`}>
+          <div className={`col-12 mb-3 col-lg-8`}>
             {loading ? (
               <div>Loading...</div>
             ) : (
@@ -40,11 +45,6 @@ const Home = () => {
                 title="My Jobs"
               />
             )}
-          </div>
-        )}
-        {loggedIn && admin && (
-          <div className="col-12 col-lg-3 mb-3">
-            <JobForm />
           </div>
         )}
         {!loggedIn && (

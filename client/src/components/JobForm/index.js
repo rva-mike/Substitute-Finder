@@ -76,7 +76,7 @@ const JobForm = () => {
         >
           <label>Subject</label>
           <input
-            placeholder="Mathamatics, Social Studies, etc..."
+            placeholder="Mathematics, Social Studies, etc..."
             type="text"
             name="subject"
             className="form-input col-12 col-md-12"
