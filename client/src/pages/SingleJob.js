@@ -44,15 +44,13 @@ const SingleJob = () => {
     <div>
       <div className="card mb-3">
         <p className="card-header">
-          <span style={{ fontWeight: 700 }} className="text-dark">
-            {job.username}&nbsp;
+          <span style={{ fontWeight: 700 }} className="text-light">
+            {job.username}
           </span>{' '}
           job on {job.createdAt}
         </p>
         <div className="card-body">
           <p>{job.description}</p>
-        <div className="card-body text-dark">
-          <p>{job.jobText}</p>
         </div>
       </div>
 
