@@ -25,10 +25,6 @@ const JobList = ({ jobs, title }) => {
             <div className="card-body">
               <Link to={`/job/${job._id}`}>
                 <p>{job.dates} | {job.grade} grade | {job.subject}</p>
-                <p className="mb-0">
-                  Reactions: {job.reactionCount} || Click to{' '}
-                  {job.reactionCount ? 'see' : 'start'} the discussion!
-                </p>
               </Link>
             </div>
           </div>

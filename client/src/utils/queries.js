@@ -25,12 +25,13 @@ export const QUERY_JOB = gql`
       description
       createdAt
       username
-      reactionCount
-      reactions {
+      applicationCount
+      applications {
         _id
-        createdAt
         username
-        reactionBody
+        email
+        about
+        degree
       }
     }
   }
