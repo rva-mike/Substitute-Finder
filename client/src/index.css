@@ -148,8 +148,8 @@ nav a:hover, nav a:focus {
   color: white;
  }
 
- .login-btn, .signup-btn {
-  font-size: 18px !important;
+ .nav-bar-links{
+  font-size: 19px !important;
 }
 
 .page-title {

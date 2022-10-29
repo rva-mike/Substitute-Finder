@@ -34,15 +34,15 @@ const Header = () => {
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Me</Link>
-              <a href="/" onClick={logout}>
+              <Link className='nav-bar-links' to="/profile">Me</Link>
+              <a className='nav-bar-links' href="/" onClick={logout}>
                 Logout
               </a>
             </>
           ) : (
             <>
-              <Link className='login-btn' to="/login">Login</Link>
-              <Link className='signup-btn' to="/signup">Signup</Link>
+              <Link className='nav-bar-links' to="/login">Login</Link>
+              <Link className='nav-bar-links' to="/signup">Signup</Link>
             </>
           )}
         </nav>
