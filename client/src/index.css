@@ -136,6 +136,13 @@ nav a:hover, nav a:focus {
  
 }
 
+.sub-title{
+  font-weight: 100 !important;
+  font-size: 14px !important;
+  margin-top: -5px;
+  margin-bottom: 1px;
+}
+
 
 .github-icon {
   font-size: xx-large;
@@ -145,6 +152,9 @@ nav a:hover, nav a:focus {
   color: white;
  }
 
+ .login-btn, .signup-btn {
+  font-size: 18px !important;
+}
 
 .page-title {
   text-align: center;
@@ -980,6 +990,19 @@ input {
 }
 
 
+@media screen and (min-width: 200px) {
+  header {
+    text-align: center;
+  }
+
+  .list-heading {
+    text-align: center;
+  }
+
+  .sub-title{
+    margin-bottom: 8px;
+  }
+}
 
 /* col-sm */
 @media screen and (min-width: 640px) {
@@ -988,7 +1011,11 @@ input {
     flex-basis: 0;
   }
 
+  header {
+    text-align: center;
+  }
   
+
   .col-sm-1 {
     flex: 0 0 calc(100% * 1 / 12 - 0.5%);
   }
@@ -1080,6 +1107,11 @@ input {
     flex-basis: 0;
   }
 
+  header {
+    text-align: center;
+  }
+  
+
   .col-md-1 {
     flex: 0 0 calc(100% * 1 / 12 - 0.5%);
   }
@@ -1169,9 +1201,14 @@ input {
     justify-content: flex-end;
   }
 
+  header {
+    text-align: left;
+  }
+
   .list-heading {
     text-align: left !important;
   }
+
 
   .page-title {
     width: auto;
