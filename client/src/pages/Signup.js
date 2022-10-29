@@ -55,7 +55,7 @@ const Signup = () => {
                 type={`checkbox`}
                 name="admin"
                 id="admin"
-                onMouseDown={handleChange}
+                onChange={handleChange}
               ></input>
               <input
                 className="form-input"
@@ -90,10 +90,8 @@ const Signup = () => {
                   <select name="school" id="school" onChange={handleChange}>
                     <option value="HTM Elementary">HTM Elementary</option>
                     <option value="Code Academy">Code Academy</option>
-                    <option value="Express Middle School">
-                      Express Middle School
-                    </option>
-                    <option value="Performant High">Performant High</option>
+                    <option value="Express Middle School">Express Middle School</option>
+                    <option value="Performant High">Performant High School</option>
                   </select>
                 </>
             }

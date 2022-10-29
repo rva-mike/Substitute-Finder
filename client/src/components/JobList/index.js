@@ -23,6 +23,8 @@ const JobList = ({ jobs, title }) => {
               <span className='date'>posted {job.createdAt}</span>
             </p>
             <div className="card-body">
+              <Link to={`/job/${job._id}`}>
+                <p>{job.dates} | {job.grade} grade | {job.subject}</p>
               <Link className='' to={`/job/${job._id}`}>
                 <p className=''>{job.jobText}</p>
                 <p className="mb-0">

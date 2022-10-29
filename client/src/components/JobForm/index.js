@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { useMutation } from '@apollo/client';
-import { ADD_JOB } from '../../utils/mutations';
-import { QUERY_JOBS, QUERY_ME } from '../../utils/queries';
+import { useMutation } from "@apollo/client";
+import { ADD_JOB } from "../../utils/mutations";
+import { QUERY_JOBS, QUERY_ME } from "../../utils/queries";
 
 const JobForm = () => {
-  const [jobText, setText] = useState('');
+  const [jobText, setText] = useState({
+    subject: "",
+    grade: "",
+    dates: "",
+    description: "",
+  });
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addJob, { error }] = useMutation(ADD_JOB, {
     update(cache, { data: { addJob } }) {
-      
-        // could potentially not exist yet, so wrap in a try/catch
+      // could potentially not exist yet, so wrap in a try/catch
       try {
         // update me array's cache
         const { me } = cache.readQuery({ query: QUERY_ME });
@@ -20,7 +24,7 @@ const JobForm = () => {
           data: { me: { ...me, jobs: [...me.jobs, addJob] } },
         });
       } catch (e) {
-        console.warn("First job insertion by user!")
+        console.warn("First job insertion by user!");
       }
 
       // update job array's cache
@@ -29,14 +33,19 @@ const JobForm = () => {
         query: QUERY_JOBS,
         data: { jobs: [addJob, ...jobs] },
       });
-    }
+    },
   });
 
   // update state based on form input changes
   const handleChange = (event) => {
-    if (event.target.value.length <= 280) {
-      setText(event.target.value);
-      setCharacterCount(event.target.value.length);
+    const { name, value } = event.target;
+    setText({
+      ...jobText,
+      [name]: value,
+    });
+    console.log(jobText);
+    if (document.getElementById("description").value.length <= 280) {
+      setCharacterCount(document.getElementById("description").value.length);
     }
   };
 
@@ -46,11 +55,11 @@ const JobForm = () => {
 
     try {
       await addJob({
-        variables: { jobText },
+        variables: { ...jobText },
       });
 
       // clear form value
-      setText('');
+      setText("");
       setCharacterCount(0);
     } catch (e) {
       console.error(e);
@@ -58,27 +67,58 @@ const JobForm = () => {
   };
 
   return (
-    <div>
-      <p
-        className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
-      >
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
-      <form
-        className="flex-row justify-center justify-space-between-md align-stretch"
-        onSubmit={handleFormSubmit}
-      >
-        <textarea
-          placeholder="Here's a new job..."
-          value={jobText}
-          className="form-input col-12 col-md-9"
-          onChange={handleChange}
-        ></textarea>
-        <button className="btn col-12 col-md-3" type="submit">
-          Submit
-        </button>
-      </form>
+    <div className="card">
+      <h5 className="card-header">Create a new Job!</h5>
+      <div className="card-body">
+        <form
+          className="flex-row justify-center justify-space-between-md align-stretch"
+          onSubmit={handleFormSubmit}
+        >
+          <label>Subject</label>
+          <input
+            placeholder="Mathematics, Social Studies, etc..."
+            type="text"
+            name="subject"
+            className="form-input col-12 col-md-12"
+            onChange={handleChange}
+          ></input>
+          <label>Grade</label>
+          <input
+            placeholder="4th, 9th, 11th, etc..."
+            type="text"
+            name="grade"
+            className="form-input col-12 col-md-12"
+            onChange={handleChange}
+          ></input>
+          <label>Dates</label>
+          <input
+            placeholder="(ex. November 12th-16th)"
+            type="text"
+            name="dates"
+            className="form-input col-12 col-md-12"
+            onChange={handleChange}
+          ></input>
+          <label>Description</label>
+          <textarea
+            placeholder="Your responsibilities will be..."
+            name="description"
+            id="description"
+            className="form-input col-12 col-md-12"
+            onChange={handleChange}
+          ></textarea>
+          <p
+            className={`m-0 ${
+              characterCount === 280 || error ? "text-error" : ""
+            }`}
+          >
+            Character Count: {characterCount}/280
+            {error && <span className="ml-2">Something went wrong...</span>}
+          </p>
+          <button className="btn col-12 col-md-3" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

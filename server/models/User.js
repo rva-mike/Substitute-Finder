@@ -20,6 +20,20 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    degree: {
+      type: Boolean,
+      default: false
+    },
+    about: {
+      type: String
+    },
+    school: {
+      type: String
+    },
+    admin: {
+      type: Boolean,
+      default: false
+    },
     jobs: [
       {
         type: Schema.Types.ObjectId,
@@ -35,7 +49,8 @@ const userSchema = new Schema(
   },
   {
     toJSON: {
-      virtuals: true
+      virtuals: true,
+      getters: true
     }
   }
 );
@@ -57,6 +72,10 @@ userSchema.methods.isCorrectPassword = async function(password) {
 
 userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
+});
+
+userSchema.virtual('jobCount').get(function() {
+  return this.jobs.length;
 });
 
 const User = model('User', userSchema);

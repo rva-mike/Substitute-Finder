@@ -13,22 +13,28 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($username: String!, $password: String!, $email: String!, $school: String, $admin: Boolean) {
+    addUser(username: $username, password: $password, email: $email, school: $school, admin: $admin) {
       token
       user {
         _id
+        email
         username
+        school
+        admin
       }
     }
   }
 `;
 
 export const ADD_JOB = gql`
-  mutation addJob($jobText: String!) {
-    addJob(jobText: $jobText) {
+  mutation addJob($subject: String!, $grade: String!, $dates: String!, $description: String!) {
+    addJob(subject: $subject, grade: $grade, dates: $dates, description: $description) {
       _id
-      jobText
+      description
+      subject
+      grade
+      dates
       createdAt
       username
       reactionCount
@@ -38,6 +44,22 @@ export const ADD_JOB = gql`
     }
   }
 `;
+
+export const ADD_APPLICATION = gql`
+  mutation addApplication($jobId: ID!) {
+    addApplication(jobId: $jobId) {
+      _id
+      applicationCount
+      applications {
+        _id
+        username
+        email
+        about
+        degree
+      }
+    }
+  }
+`
 
 export const ADD_REACTION = gql`
   mutation addReaction($jobId: ID!, $reactionBody: String!) {
