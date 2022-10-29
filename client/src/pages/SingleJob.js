@@ -40,6 +40,9 @@ const SingleJob = () => {
     }
   };
 
+  const applied = job.applications.find(app => app._id === userData.me._id);
+
+
   return (
     <div>
       <div className="card mb-3">
@@ -60,10 +63,15 @@ const SingleJob = () => {
         </div>
       )}
 
-      {Auth.loggedIn() && !admin &&
+      {Auth.loggedIn() && !admin && !applied &&
         <form onSubmit={handleFormSubmit}>
           <button className="btn col-12 col-md-3" type="submit">Apply</button> 
         </form>
+      }
+      {Auth.loggedIn() && !admin && applied &&
+        <p>
+          Already Applied!
+        </p>
       }
     </div>
   );
