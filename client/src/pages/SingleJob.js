@@ -30,7 +30,7 @@ const SingleJob = (props) => {
           </span>{' '}
           job on {job.createdAt}
         </p>
-        <div className="card-body">
+        <div className="card-body text-dark">
           <p>{job.jobText}</p>
         </div>
       </div>

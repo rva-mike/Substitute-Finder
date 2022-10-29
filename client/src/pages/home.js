@@ -28,7 +28,7 @@ const Home = () => {
           ) : (
             <JobList
               jobs={jobs}
-              title="Some Feed for Job(s)..."
+             
             />
           )}
         </div>

@@ -23,6 +23,9 @@ body {
   min-height: 100%;
 }
 
+.bbb {
+  text-align: center;
+}
 
 body {
   margin: 0;
@@ -94,12 +97,19 @@ p {
 
 a {
   text-decoration: none !important;
-  color: inherit;
+  color: black !important;
 }
 
 a:visited {
-  color: inherit;
+  color: inherit !important;
 }
+
+
+::selection {
+  background: black;
+  color: white;
+}
+
 
 nav {
   width: 100%;
@@ -126,6 +136,7 @@ nav a:hover, nav a:focus {
  
 }
 
+
 .github-icon {
   font-size: xx-large;
  }
@@ -142,12 +153,6 @@ nav a:hover, nav a:focus {
   font-size: 2.5rem;
 }
 
-
-
-.sub-heading {
-  font-weight: 200;
-  font-size: 15px;
-}
 
 
 .main-logo:hover, .main-logo:focus {
@@ -169,9 +174,9 @@ nav a:hover, nav a:focus {
 }
 
 .card-header {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
+  /* display: flex !important`;
+  justify-content: flex-start !important;
+  flex-direction: row; */
   color: var(--secondary);
   margin: 0;
   background-color: var(--dark);
@@ -184,12 +189,25 @@ nav a:hover, nav a:focus {
   font-size: 1.4rem;
 }
 
+.card-body :visited {
+  color: --dark;
+}
+
+
+/* .date {
+  font-size: 16px;
+} */
+
+
 /* FORM */
 .form-label,
 .form-input,
 .form-textarea {
   display: block;
 }
+
+
+
 
 .form-label {
   font-size: 1.2rem;
@@ -970,6 +988,7 @@ input {
     flex-basis: 0;
   }
 
+  
   .col-sm-1 {
     flex: 0 0 calc(100% * 1 / 12 - 0.5%);
   }
@@ -1048,6 +1067,9 @@ input {
 
   .align-center-sm {
     align-items: center;
+  }
+  .list-heading {
+    text-align: center !important ;
   }
 }
 
@@ -1130,6 +1152,7 @@ input {
     align-items: stretch;
   }
 
+  
   .align-end-md {
     align-items: flex-end;
   }
@@ -1144,6 +1167,10 @@ input {
   nav {
     width: auto;
     justify-content: flex-end;
+  }
+
+  .list-heading {
+    text-align: left !important;
   }
 
   .page-title {
@@ -1239,7 +1266,7 @@ input {
 .gitlink {
   text-decoration: none;
   font-weight: 400 !important;
-  color: rgba(255, 255, 255, 0.559);
+  color: rgba(255, 255, 255, 0.559) !important;
 
 }
 
@@ -1268,7 +1295,7 @@ input {
   animation-name: shimmer;
   -webkit-animation-duration: 5s;
   -moz-animation-duration: 5s;
-  animation-duration: 5s;
+  animation-duration: 4.25s;
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
@@ -1325,6 +1352,7 @@ input {
     flex: 0 0 calc(100% * 1 / 12 - 0.5%);
   }
 
+  
   .col-xl-2 {
     flex: 0 0 calc(100% * 2 / 12 - 0.5%);
   }
@@ -1401,6 +1429,4 @@ input {
     align-items: center;
   }
 }
-
-
 
