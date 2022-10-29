@@ -49,7 +49,7 @@ const Home = () => {
         )}
         {!loggedIn && (
           <div>
-            <h3 >Welcome to Sub-Atomic!</h3>
+            <h1 >Welcome to Sub-Atomic!</h1>
           </div>
         )}
       </div>
