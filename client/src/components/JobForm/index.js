@@ -4,12 +4,13 @@ import { useMutation } from "@apollo/client";
 import { ADD_JOB } from "../../utils/mutations";
 import { QUERY_JOBS, QUERY_ME } from "../../utils/queries";
 
-const JobForm = () => {
+const JobForm = ({school}) => {
   const [jobText, setText] = useState({
     subject: "",
     grade: "",
     dates: "",
     description: "",
+    school: school
   });
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -19,6 +20,7 @@ const JobForm = () => {
       try {
         // update me array's cache
         const { me } = cache.readQuery({ query: QUERY_ME });
+        // setText({...jobText, school: me.school});
         cache.writeQuery({
           query: QUERY_ME,
           data: { me: { ...me, jobs: [...me.jobs, addJob] } },

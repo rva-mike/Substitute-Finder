@@ -20,7 +20,7 @@ const Home = () => {
       <div className="flex-row justify-space-between">
       {loggedIn && admin && (
           <div className={`col-12 col-lg-3 mb-3`}>
-            <JobForm />
+            <JobForm/>
           </div>
         )}
         {loggedIn && !admin && (
@@ -29,6 +29,7 @@ const Home = () => {
               <div>Loading...</div>
             ) : (
               <JobList
+                // school={userData.school}
                 jobs={jobs}
                 title="Available Jobs"
               />
@@ -41,6 +42,7 @@ const Home = () => {
               <div>Loading...</div>
             ) : (
               <JobList
+                school={userData.school}
                 jobs={myJobs}
                 title="My Jobs"
               />
