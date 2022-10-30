@@ -7,6 +7,9 @@ export const QUERY_JOBS = gql`
       description
       createdAt
       username
+      grade
+      subject
+      dates
       reactionCount
       reactions {
         _id
@@ -22,6 +25,9 @@ export const QUERY_JOB = gql`
   query job($id: ID!) {
     job(_id: $id) {
       _id
+      grade
+      subject
+      dates
       description
       createdAt
       username

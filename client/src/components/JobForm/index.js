@@ -114,9 +114,12 @@ const JobForm = () => {
             Character Count: {characterCount}/280
             {error && <span className="ml-2">Something went wrong...</span>}
           </p>
-          <button className="btn col-12 col-md-3" type="submit">
+          <div>
+          <br />
+          <button className="btn col-12" type="submit">
             Submit
           </button>
+          </div>
         </form>
       </div>
     </div>
