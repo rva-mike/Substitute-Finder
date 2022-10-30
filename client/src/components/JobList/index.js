@@ -7,8 +7,8 @@ const JobList = ({ jobs, title }) => {
   }
 
   return (
-    <div>
-      <h3>{title}</h3>
+    <div className=''>
+      <h3 className='list-heading'>{title}</h3>
       {jobs &&
         jobs.map(job => (
           <div key={job._id} className="card mb-3">

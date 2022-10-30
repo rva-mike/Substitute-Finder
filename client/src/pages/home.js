@@ -24,7 +24,7 @@ const Home = () => {
           </div>
         )}
         {loggedIn && !admin && (
-          <div className={`col-12 mb-3 col-lg-8`}>
+          <div className={`col-12 mb-3`}>
             {loading ? (
               <div>Loading...</div>
             ) : (
