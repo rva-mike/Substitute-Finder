@@ -189,6 +189,19 @@ nav a:hover, nav a:focus {
   /* max-width: 1200px; */
 }
 
+.application-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.application-card {
+  width: 275px;
+  margin: 20px 13px;
+  box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.14);
+  -webkit-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.14);
+  -moz-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.14);
+}
+
 .card-header {
   /* display: flex !important`;
   justify-content: flex-start !important;
