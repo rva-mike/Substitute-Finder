@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -15,7 +16,7 @@ import Home from './pages/home';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import SingleJob from './pages/SingleJob';
-import Profile from './pages/Profile';
+import Profile from './pages/profile';
 import Signup from './pages/Signup';
 
 const httpLink = createHttpLink({

@@ -28,9 +28,10 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_JOB = gql`
-  mutation addJob($subject: String!, $grade: String!, $dates: String!, $description: String!) {
-    addJob(subject: $subject, grade: $grade, dates: $dates, description: $description) {
+  mutation addJob($active: Boolean!, $subject: String!, $grade: String!, $dates: String!, $description: String!) {
+    addJob(active: $active, subject: $subject, grade: $grade, dates: $dates, description: $description) {
       _id
+      active
       description
       subject
       grade
@@ -57,6 +58,15 @@ export const ADD_APPLICATION = gql`
         about
         degree
       }
+    }
+  }
+`;
+
+export const DEACTIVATE_JOB = gql`
+  mutation deactivateJob($jobId: ID!, $active: Boolean!) {
+    deactivateJob(jobId: $jobId, active: $active) {
+      _id
+      active
     }
   }
 `

@@ -6,6 +6,7 @@ import { QUERY_JOBS, QUERY_ME } from "../../utils/queries";
 
 const JobForm = () => {
   const [jobText, setText] = useState({
+    active: true,
     subject: "",
     grade: "",
     dates: "",
@@ -115,10 +116,10 @@ const JobForm = () => {
             {error && <span className="ml-2">Something went wrong...</span>}
           </p>
           <div>
-          <br />
-          <button className="btn col-12" type="submit">
-            Submit
-          </button>
+            <br />
+            <button className="btn col-12" type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </div>

@@ -4,6 +4,7 @@ export const QUERY_JOBS = gql`
   query jobs($username: String) {
     jobs(username: $username) {
       _id
+      active
       description
       createdAt
       username
@@ -25,6 +26,7 @@ export const QUERY_JOB = gql`
   query job($id: ID!) {
     job(_id: $id) {
       _id
+      active
       grade
       subject
       dates
@@ -77,6 +79,7 @@ export const QUERY_ME = gql`
       admin
       jobs {
         _id
+        active
         description
         dates
         grade
