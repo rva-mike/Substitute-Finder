@@ -34,7 +34,7 @@ export const QUERY_JOB = gql`
         _id
         username
         email
-        about
+        phone
         degree
       }
     }

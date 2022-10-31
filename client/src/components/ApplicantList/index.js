@@ -21,5 +21,5 @@ const ApplicantList = ({ applications }) => {
         </div>
     );
   };
-  
+
   export default ApplicantList;

@@ -55,7 +55,7 @@ const SingleJob = () => {
     navigate('/');
   };
 
-  const applied = job.applications.find(app => app._id === userData.me._id);
+  const applied = job.applications.find(app => app._id === userData?.me._id);
 
 
   return (

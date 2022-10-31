@@ -9,7 +9,6 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('jobs')
-          .populate('friends');
 
         return userData;
       }
@@ -20,20 +19,21 @@ const resolvers = {
       return User.find()
         .select('-__v -password')
         .populate('jobs')
-        .populate('friends');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
-        .populate('friends')
         .populate('jobs');
     },
     jobs: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Job.find(params).sort({ createdAt: -1 });
+      return Job.find(params)
+      .populate('applications')
+      .sort({ createdAt: -1 });
     },
     job: async (parent, { _id }) => {
-      return Job.findOne({ _id });
+      return Job.findOne({ _id })
+      .populate('applications');
     }
   },
 
