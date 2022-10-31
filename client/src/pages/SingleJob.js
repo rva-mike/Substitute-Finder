@@ -70,10 +70,10 @@ const SingleJob = () => {
           <span style={{ fontWeight: 700 }}>
             {job.username}
           </span>
-          {' |      '}job posted on {job.createdAt}
+          {' |  '}job posted on {job.createdAt}
         </p>
         <div className="card-body">
-          <p><b>Dates: </b>{job.dates}<br />{job.grade} grade | {job.subject}</p>
+          <p><b>Date(s): </b>{job.dates}<br />{job.grade} grade | {job.subject}</p>
           <p>{job.description}</p>
         </div>
       </div>

@@ -25,7 +25,7 @@ const JobList = ({ jobs, title }) => {
             </p>
             <div className="card-body">
               <Link to={`/job/${job._id}`}>
-                <p><b>Dates: </b>{job.dates}<br />{job.grade} grade | {job.subject}</p>
+                <p><b>Date(s): </b>{job.dates}<br />{job.grade} grade | {job.subject}</p>
               </Link>
             </div>
           </div>
