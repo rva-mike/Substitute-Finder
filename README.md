@@ -1,7 +1,7 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-![Screenshot 2022-10-31 112642](https://user-images.githubusercontent.com/105617274/199068350-111ceafd-b4d8-4fb8-956c-6644beafc970.png)
+![Screenshot 2022-10-31 131642](https://user-images.githubusercontent.com/105617274/199068855-5d78e255-6a72-49a0-9750-87341929fae2.png)
 
 
 # Sub-Atomic
