@@ -4,7 +4,7 @@
 # Substitute-Finder
 
   ## Description
-   This is an app designed to make the process of a finding a substitutue teacher faster and easier.  It uses the MERN (MongoDB, Express.js, React, and Node.js) tech stack. It combines a back-end implented with Node.js and Express.js API with a MongoDB database with a React front-end to create a single-page MERN application.
+   This is an app designed to make the process of a finding a substitutue teacher faster and easier.  It uses the MERN (MongoDB, Express.js, React, and Node.js) tech stack. It combines a back-end implemented with Node.js and Express.js API with a MongoDB database with a React front-end to create a single-page MERN application.
    
    #### Technologies Used:
    
