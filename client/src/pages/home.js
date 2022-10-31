@@ -29,7 +29,6 @@ const Home = () => {
               <div>Loading...</div>
             ) : (
               <JobList
-                // school={userData.school}
                 jobs={jobs}
                 title="Available Jobs"
               />
@@ -42,7 +41,6 @@ const Home = () => {
               <div>Loading...</div>
             ) : (
               <JobList
-                school={userData.school}
                 jobs={myJobs}
                 title="My Jobs"
               />

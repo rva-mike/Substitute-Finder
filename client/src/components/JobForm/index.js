@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-
+import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import { ADD_JOB } from "../../utils/mutations";
 import { QUERY_JOBS, QUERY_ME } from "../../utils/queries";
 
-const JobForm = ({school}) => {
+
+
+const JobForm = () => {
+  const { data: userData } = useQuery(QUERY_ME);
+  console.log(userData);
+  const school = userData.me.school;
   const [jobText, setText] = useState({
     subject: "",
     grade: "",
@@ -13,14 +18,13 @@ const JobForm = ({school}) => {
     school: school
   });
   const [characterCount, setCharacterCount] = useState(0);
-
   const [addJob, { error }] = useMutation(ADD_JOB, {
     update(cache, { data: { addJob } }) {
       // could potentially not exist yet, so wrap in a try/catch
       try {
         // update me array's cache
         const { me } = cache.readQuery({ query: QUERY_ME });
-        // setText({...jobText, school: me.school});
+
         cache.writeQuery({
           query: QUERY_ME,
           data: { me: { ...me, jobs: [...me.jobs, addJob] } },

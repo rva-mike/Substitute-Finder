@@ -24,7 +24,7 @@ const Profile = (props) => {
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile:username" />;
   }
-
+  console.log(user);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -65,6 +65,7 @@ const Profile = (props) => {
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
           <JobList
+            school={user.school}
             jobs={user.jobs}
             title={`${user.username}'s jobs...`}
           />

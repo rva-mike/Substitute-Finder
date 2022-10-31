@@ -8,6 +8,7 @@ export const QUERY_JOBS = gql`
       createdAt
       username
       grade
+      school
       subject
       dates
       reactionCount
@@ -31,6 +32,7 @@ export const QUERY_JOB = gql`
       description
       createdAt
       username
+      school
       applicationCount
       applications {
         _id
@@ -50,6 +52,7 @@ export const QUERY_USER = gql`
       username
       email
       friendCount
+      school
       friends {
         _id
         username
@@ -75,12 +78,14 @@ export const QUERY_ME = gql`
       email
       friendCount
       admin
+      school
       jobs {
         _id
         description
         dates
         grade
         subject
+        school
         createdAt
         reactionCount
         reactions {
