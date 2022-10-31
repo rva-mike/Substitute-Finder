@@ -179,6 +179,10 @@ nav a:hover, nav a:focus {
   display: inline;
 }
 
+.close-btn {
+  display: flex !important;
+}
+
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
