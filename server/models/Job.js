@@ -4,10 +4,13 @@ const dateFormat = require('../utils/dateFormat');
 
 const jobSchema = new Schema(
   {
+    active: {
+      type: Boolean,
+      required: true
+    },
     description: {
       type: String,
       required: 'You need to leave a job!',
-      // minlength: 1,
       maxlength: 280
     },
     subject: {

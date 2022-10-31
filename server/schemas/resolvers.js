@@ -110,6 +110,18 @@ const resolvers = {
         )
         return updatedUser;
       }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    deactivateJob: async(parent, {jobId, active}, context) => {
+      if (context.user) {
+        const updatedJob = await Job.findOneAndUpdate(
+          {_id: jobId},
+          {$set: {active: active}},
+          {new: true}
+        )
+        return updatedJob;
+      }
+      throw new AuthenticationError('You need to be logged in!');
     }
   }
 };

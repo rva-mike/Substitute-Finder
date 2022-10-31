@@ -10,7 +10,8 @@ const JobList = ({ jobs, title}) => {
     <div className=''>
       <h3 className='list-heading'>{title}</h3>
       {jobs &&
-        jobs.map(job => (
+        jobs.filter(job => job.active === true)
+        .map(job => (
           <div key={job._id} className="card mb-3">
             <p className="card-header">
               <Link
@@ -24,11 +25,12 @@ const JobList = ({ jobs, title}) => {
             </p>
             <div className="card-body">
               <Link to={`/job/${job._id}`}>
-                <p>{job.dates} | {job.grade} grade | {job.subject} | {job.school}</p>
+                <p><b>Date(s): </b>{job.dates}<br /><b>School: </b> {job.school}<br />{job.grade} grade | {job.subject}</p>
               </Link>
             </div>
           </div>
-        ))}
+        ))
+      }
     </div>
   );
 };
