@@ -1,7 +1,10 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-# Substitute-Finder
+![Screenshot 2022-10-31 112642](https://user-images.githubusercontent.com/105617274/199068350-111ceafd-b4d8-4fb8-956c-6644beafc970.png)
+
+
+# Sub-Atomic
 
   ## Description
    This is an app designed to make the process of a finding a substitutue teacher faster and easier.  It uses the MERN (MongoDB, Express.js, React, and Node.js) tech stack. It combines a back-end implemented with Node.js and Express.js API with a MongoDB database with a React front-end to create a single-page MERN application.
