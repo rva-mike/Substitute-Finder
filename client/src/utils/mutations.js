@@ -45,6 +45,22 @@ export const ADD_JOB = gql`
   }
 `;
 
+export const ADD_APPLICATION = gql`
+  mutation addApplication($jobId: ID!) {
+    addApplication(jobId: $jobId) {
+      _id
+      applicationCount
+      applications {
+        _id
+        username
+        email
+        about
+        degree
+      }
+    }
+  }
+`
+
 export const ADD_REACTION = gql`
   mutation addReaction($jobId: ID!, $reactionBody: String!) {
     addReaction(jobId: $jobId, reactionBody: $reactionBody) {

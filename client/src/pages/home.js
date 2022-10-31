@@ -24,7 +24,7 @@ const Home = () => {
           </div>
         )}
         {loggedIn && !admin && (
-          <div className={`col-12 mb-3 col-lg-8`}>
+          <div className={`col-12 mb-3`}>
             {loading ? (
               <div>Loading...</div>
             ) : (
@@ -51,7 +51,7 @@ const Home = () => {
         )}
         {!loggedIn && (
           <div>
-            <h3 >Welcome to Sub-Atomic!</h3>
+            <h1 >Welcome to Sub-Atomic!</h1>
           </div>
         )}
       </div>

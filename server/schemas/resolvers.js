@@ -30,10 +30,13 @@ const resolvers = {
     },
     jobs: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Job.find(params).sort({ createdAt: -1 });
+      return Job.find(params)
+      .populate('applications')
+      .sort({ createdAt: -1 });
     },
     job: async (parent, { _id }) => {
-      return Job.findOne({ _id });
+      return Job.findOne({ _id })
+      .populate('applications');
     }
   },
 
@@ -82,6 +85,22 @@ const resolvers = {
           { $push: { reactions: { reactionBody, username: context.user.username } } },
           { new: true, runValidators: true }
         );
+
+        return updatedJob;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    addApplication: async(parent, {jobId}, context) => {
+      if (context.user) {
+        const user = await User.findOne({username: context.user.username});
+        
+        console.log(user);
+        const updatedJob = await Job.findOneAndUpdate(
+          {_id: jobId},
+          { $addToSet: {applications: {_id: user._id, username: user.username}}},
+          {new: true}
+        ).populate('applications');
 
         return updatedJob;
       }
