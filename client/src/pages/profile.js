@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
+import {FaShareSquare, FaCheckCircle} from "react-icons/fa";
 
 import ImageUpload from '../components/ImageUpload';
 import Navbar from '../components/Navbar';
@@ -27,6 +28,9 @@ const Profile = (props) => {
     console.log(event.target.about.value);
   };
 
+  const hasDegree = user.degree;
+  console.log(hasDegree);
+
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile:username" />;
@@ -46,35 +50,43 @@ const Profile = (props) => {
   }
 
   return (
-    <div>
-    <div className="container-image">
-    <h2 className="bg-dark text-secondary p-3 display-inline-block">
-        <ImageUpload/>
-      </h2>
-
-    </div>
-
-    <div className="flex-row mb-3">
-      <h2 className="bg-dark text-secondary p-3 display-inline-block">
-        Viewing {`${user.username}'s`} profile.
-      </h2>
-    </div>
-
-    <div className="flex-row mb-3">
-      <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          <Navbar/>
-        </h2>
-        </div>
-
-      <div className="flex-row justify-space-between mb-3">
-
-
-          <Container triggerText={triggerText} onSubmit={onSubmit} />
-        <div id='contactnav' className="flex-row mb-3">
-      <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          <Contact/>
-        </h2>
-        </div>
+    <div className='ml-auto m-auto w-60'>
+      <div className='card'>
+          <div className="ml-auto mr-auto">
+              {/* <ImageUpload/> */}
+          </div>
+          {Auth.loggedIn() && hasDegree && (
+            <div className="flex-row ml-auto mr-auto">
+              <h1 className="p-3 display-inline-block text-dark">
+                {user.username}
+                &nbsp;
+                <FaCheckCircle className='email-icon'/>
+                <hr />
+              </h1>
+            </div>
+          )}
+          {Auth.loggedIn() && !hasDegree && (
+            <div className="flex-row ml-auto mr-auto">
+              <h1 className="p-3 display-inline-block text-dark">
+                {user.username}<hr />
+              </h1>
+            </div>
+          )}
+          <div className="flex-row mb-3 ml-auto mr-auto">
+            <p>{user.about}</p>
+          </div>
+          <div className='flex-row ml-3'>
+            <h5 className='text-dark'>Contact Me<hr /></h5>
+          </div>
+          <div className='flex-row ml-3 mr-3'>
+            <p className='w-100'>
+              <span className="text-dark">Email: </span>
+                {user.email}&nbsp;
+                <a id="mail" rel="noopener noreferrer" href={`https://mail.google.com/mail/?view=cm&fs=1&to=${user.email}`}><FaShareSquare className='email-icon mb-1'/></a>
+                <br />
+              <span className="text-dark">Phone Number: </span> {user.phone}
+            </p>
+          </div>
       </div>
     </div>
   );

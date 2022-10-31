@@ -1,26 +1,53 @@
-import React, { useState, useEffect} from "react";
+// import React, {useState} from 'react'
+// import storage from "../../firebase.js"
 
-const ImageUpload = () => {
-    const [images, setImages] = useState([]);
-    const [imageURLs, setImagesURLs] = useState([]);
+// const ImageUpload = () => {
+//     const allInputs = {imgUrl: ''}
+//     const [imageAsFile, setImageAsFile] = useState('')
+//     const [imageAsUrl, setImageAsUrl] = useState(allInputs)
 
-    useEffect(() => {
-        if (images.length < 1) return;
-        const newImageUrls = [];
-        images.forEach(image => newImageUrls.push(URL.createObjectURL(image)));
-        setImagesURLs(newImageUrls);
-    }, [images]);
+//     const handleImageAsFile = (e) => {
+//         const image = e.target.files[0]
+//         setImageAsFile(imageFile => (image))
+//     }
 
-    function onImageChange(e) {
-        setImages([...e.target.files]);
-    }
+//     const handleFireBaseUpload = e => {
+//         e.preventDefault()
+//         console.log('start of upload')
 
-    return( 
-        <>
-            <input type="file" multiple accept="image/*" onChange={onImageChange} />
-            { imageURLs.map(imageSrc => <img src={imageSrc} />)}
-        </>
-    );
-}
+//         if(imageAsFile === '' ) {
+//             console.error(`not an image, the image file is a ${typeof(imageAsFile)}`)
+//         }
 
-export default ImageUpload;
+//         const uploadTask = storage.ref(`/images/${imageAsFile.name}`).put(imageAsFile)
+
+//         uploadTask.on('state_changed', 
+//         (snapShot) => {
+//           console.log(snapShot)
+//         }, (err) => {
+//           console.log(err)
+//         }, () => {
+//           storage.ref('images').child(imageAsFile.name).getDownloadURL()
+//            .then(fireBaseUrl => {
+//              setImageAsUrl(prevObject => ({...prevObject, imgUrl: fireBaseUrl}))
+//            })
+//         })
+//     }
+
+//     return (
+//         <div className="App">
+//             <form onSubmit={handleFireBaseUpload}>
+//                 <input 
+//                 type="file"
+//                 onChange={handleImageAsFile}
+//             />
+//                 <button>upload to firebase</button>
+//             </form>
+
+//             <img src={imageAsUrl.imgUrl} alt="image tag" />
+//         </div>
+//     );
+// }
+
+
+// export default ImageUpload();

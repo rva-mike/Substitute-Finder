@@ -86,7 +86,7 @@ const SingleJob = () => {
 
       {Auth.loggedIn() && !admin && !applied &&
         <form onSubmit={handleFormSubmit}>
-          <button className="btn col-12 col-md-3" type="submit">Apply</button> 
+          <button className="btn btn-success col-12 col-md-3" type="submit">Apply</button> 
         </form>
       }
       {Auth.loggedIn() && !admin && applied &&

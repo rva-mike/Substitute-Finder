@@ -81,7 +81,7 @@ const JobForm = () => {
           className="flex-row justify-center justify-space-between-md align-stretch"
           onSubmit={handleFormSubmit}
         >
-          <label>Subject</label>
+          <label className="text-dark">Subject:</label>
           <input
             placeholder="Mathematics, Social Studies, etc..."
             type="text"
@@ -89,7 +89,7 @@ const JobForm = () => {
             className="form-input col-12 col-md-12"
             onChange={handleChange}
           ></input>
-          <label>Grade</label>
+          <label className="text-dark">Grade:</label>
           <input
             placeholder="4th, 9th, 11th, etc..."
             type="text"
@@ -97,7 +97,7 @@ const JobForm = () => {
             className="form-input col-12 col-md-12"
             onChange={handleChange}
           ></input>
-          <label>Dates</label>
+          <label className="text-dark">Dates:</label>
           <input
             placeholder="(ex. November 12th-16th)"
             type="text"
@@ -105,7 +105,7 @@ const JobForm = () => {
             className="form-input col-12 col-md-12"
             onChange={handleChange}
           ></input>
-          <label>Description</label>
+          <label className="text-dark">Description:</label>
           <textarea
             placeholder="Your responsibilities will be..."
             name="description"
@@ -121,9 +121,9 @@ const JobForm = () => {
             Character Count: {characterCount}/280
             {error && <span className="ml-2">Something went wrong...</span>}
           </p>
-          <div>
+          <div className="w-75 mr-auto ml-auto">
             <br />
-            <button className="btn col-12" type="submit">
+            <button className="btn btn-primary col-12 w-100" type="submit">
               Submit
             </button>
           </div>

@@ -52,7 +52,7 @@ export const ADD_APPLICATION = gql`
         _id
         username
         email
-        about
+        phone
         degree
       }
     }

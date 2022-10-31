@@ -37,6 +37,9 @@ const userSchema = new Schema(
       type: Boolean,
       default: false
     },
+    profileURL: {
+      type: String
+    },
     jobs: [
       {
         type: Schema.Types.ObjectId,

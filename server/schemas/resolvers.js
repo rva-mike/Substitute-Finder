@@ -75,11 +75,27 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    updateMe: async (parent, {email, degree, about}, context) => {
+    addApplication: async(parent, {jobId}, context) => {
+      if (context.user) {
+        const user = await User.findOne({username: context.user.username});
+        
+        console.log(user);
+        const updatedJob = await Job.findOneAndUpdate(
+          {_id: jobId},
+          { $addToSet: {applications: {_id: user._id, username: user.username}}},
+          {new: true}
+        ).populate('applications');
+
+        return updatedJob;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    updateMe: async (parent, {email, phone, degree, about, profileURL}, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           {_id: context.user._id},
-          {$set: {email: email, degree: degree, about: about}},
+          {$set: {email: email, phone: phone, degree: degree, about: about, profileURL: profileURL}},
           {new: true}
         )
         return updatedUser;

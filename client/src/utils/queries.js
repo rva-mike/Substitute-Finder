@@ -47,6 +47,9 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      phone
+      about
+      degree
       friendCount
       school
       jobs {
@@ -68,8 +71,12 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      phone
       admin
+      about
+      degree
       school
+      profileURL
       jobs {
         _id
         active
