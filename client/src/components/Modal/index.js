@@ -9,7 +9,7 @@ import {QUERY_ME} from '../../utils/queries';
 const customStyles = {
   content: {
     top: '20%',
-    left: '20%',
+    left: '30%',
     right: '20%',
     bottom: '20%',
     marginRight: '-20%',
@@ -35,12 +35,12 @@ const ProfileModal = () => {
   }
 
   const { data: userData } = useQuery(QUERY_ME);
-
+  
   const [userText, setText] = useState({
-    email: userData.me.email,
-    phone_number: userData.me.phone_number,
-    degree: userData.me.phone_number,
-    about: userData.me.phone_number,
+    email: "",
+    phone: "",
+    degree: false,
+    about: "",
   });
 
   const [updateMe, { error }] = useMutation(UPDATE_ME);
@@ -63,14 +63,14 @@ const ProfileModal = () => {
       await updateMe({
         variables: { ...userText },
       });
-
+      closeModal();
     } catch (e) {
       console.error(e);
     }
   };
   return (
     <div>
-      <button className='btn btn-info edit-btn mr-auto ml-auto w-100 mb-3 ' onClick={openModal}>Edit Profile</button>
+      <button className='btn btn-primary edit-btn mr-auto ml-auto w-100 mb-3 ' onClick={openModal}>Edit Profile</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -79,7 +79,7 @@ const ProfileModal = () => {
         contentLabel="Profile Modal"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Edit Profile</h2>
-        <form onSubmit={handleFormSubmit}>
+        <form className="flex-row" onSubmit={handleFormSubmit}>
           <label>Email:</label>
           <input
             placeholder={userData?.me.email || '(Ex: someone@gmail.com)'}
@@ -92,13 +92,12 @@ const ProfileModal = () => {
           <input
             placeholder={userData?.me.phone || '(Ex: 555-555-5555)'}
             type="text"
-            name="phone_number"
+            name="phone"
             className="form-input col-12 col-md-12"
             onChange={handleChange}
           ></input>
           <label>I have an associates or bachelor degree:</label>
           <input
-            placeholder={userData.me.degree}
             type={`checkbox`}
             name="degree"
             id="degree"

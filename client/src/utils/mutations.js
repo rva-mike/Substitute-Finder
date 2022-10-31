@@ -77,7 +77,6 @@ export const UPDATE_ME = gql`
       phone
       degree
       about
-      friendCount
       admin
       jobs {
         _id

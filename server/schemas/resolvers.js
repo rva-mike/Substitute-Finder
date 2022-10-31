@@ -91,11 +91,11 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    updateMe: async (parent, {email, phone, degree, about, profileURL}, context) => {
+    updateMe: async (parent, {email, phone, degree, about}, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           {_id: context.user._id},
-          {$set: {email: email, phone: phone, degree: degree, about: about, profileURL: profileURL}},
+          {$set: {email: email, phone: phone, degree: degree, about: about}},
           {new: true}
         )
         return updatedUser;

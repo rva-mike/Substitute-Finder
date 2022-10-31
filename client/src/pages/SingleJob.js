@@ -62,7 +62,7 @@ const SingleJob = () => {
     <div>
       {Auth.loggedIn() && admin && (
         <form className='flex-row justify-center justify-space-between-md align-stretch' onSubmit={handleDeactivate}>
-          <div className='w-50 mr-auto ml-auto'>
+          <div className='w-50 ml-auto'>
             <button className=" btn btn-danger close-btn ml-auto w-100 mb-3 " type="submit">Close Job Listing</button> 
           </div>
         </form>

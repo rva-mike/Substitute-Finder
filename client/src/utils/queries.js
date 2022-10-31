@@ -50,7 +50,6 @@ export const QUERY_USER = gql`
       phone
       about
       degree
-      friendCount
       school
       jobs {
         _id
@@ -76,7 +75,6 @@ export const QUERY_ME = gql`
       about
       degree
       school
-      profileURL
       jobs {
         _id
         active

@@ -8,26 +8,20 @@ import Contact from '../components/Contact';
 import { Container } from '../components/Container';
 
 
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import ProfileModal from '../components/Modal'
 
 const Profile = (props) => {
   const { username: userParam } = useParams();
-
+  
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
 
   const user = data?.me || data?.user || {};
 
-  const triggerText = 'Edit Profile';
-  const onSubmit = (event) => {
-    event.preventDefault(event);
-    console.log(event.target.email.value);
-    console.log(event.target.about.value);
-  };
 
   const hasDegree = user.degree;
   console.log(hasDegree);
@@ -83,7 +77,7 @@ const Profile = (props) => {
             <p className='w-100'>
               <span className="text-dark">Email: </span>
                 {user.email}&nbsp;
-                <a id="mail" rel="noopener noreferrer" href={`https://mail.google.com/mail/?view=cm&fs=1&to=${user.email}`}><FaShareSquare className='email-icon mb-1'/></a>
+                <a id="mail" rel="noopener noreferrer" target="_blank" href={`https://mail.google.com/mail/?view=cm&fs=1&to=${user.email}`}><FaShareSquare className='email-icon mb-1'/></a>
                 <br />
               <span className="text-dark">Phone Number: </span> {user.phone}
             </p>
