@@ -15,7 +15,7 @@ import Home from './pages/home';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
 import SingleJob from './pages/SingleJob';
-import Profile from './pages/Profile';
+import Profile from './pages/profile';
 import Signup from './pages/Signup';
 
 const httpLink = createHttpLink({

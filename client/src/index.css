@@ -87,7 +87,7 @@ h6 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 0;
 }
 
@@ -144,9 +144,18 @@ nav a:hover, nav a:focus {
   font-size: xx-large;
  }
 
- .github-icon:hover {
+.github-icon:hover {
   color: white;
- }
+}
+
+.email-icon {
+  font-size: large;
+  color: blue;
+}
+
+.email-icon:hover {
+  color: var(--dark);
+}
 
  .nav-bar-links{
   font-size: 19px !important;
@@ -170,6 +179,15 @@ nav a:hover, nav a:focus {
   display: inline;
 }
 
+.close-btn {
+  display: flex !important;
+}
+
+.edit-btn {
+  display: flex !important;
+  max-width: none !important;
+}
+
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
@@ -178,6 +196,19 @@ nav a:hover, nav a:focus {
   background-color: var(--light);
   color: var(--dark);
   /* max-width: 1200px; */
+}
+
+.application-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.application-card {
+  width: 275px;
+  margin: 20px 13px;
+  box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.14);
+  -webkit-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.14);
+  -moz-box-shadow: 5px 6px 5px 0px rgba(0,0,0,0.14);
 }
 
 .card-header {
@@ -229,7 +260,7 @@ input {
   width: 100%;
   padding: 0.75rem;
   margin: 0.2rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 2px solid var(--dark);
   border-radius: var(--border-radius);
 }
@@ -357,6 +388,10 @@ input {
 
 .w-75 {
   width: 75%;
+}
+
+.w-60 {
+  width: 60%;
 }
 
 .w-50 {

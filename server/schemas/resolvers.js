@@ -9,7 +9,6 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('jobs')
-          .populate('friends');
 
         return userData;
       }
@@ -20,12 +19,10 @@ const resolvers = {
       return User.find()
         .select('-__v -password')
         .populate('jobs')
-        .populate('friends');
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
-        .populate('friends')
         .populate('jobs');
     },
     jobs: async (parent, { username }) => {
@@ -78,19 +75,6 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    addReaction: async (parent, { jobId, reactionBody }, context) => {
-      if (context.user) {
-        const updatedJob = await Job.findOneAndUpdate(
-          { _id: jobId },
-          { $push: { reactions: { reactionBody, username: context.user.username } } },
-          { new: true, runValidators: true }
-        );
-
-        return updatedJob;
-      }
-
-      throw new AuthenticationError('You need to be logged in!');
-    },
     addApplication: async(parent, {jobId}, context) => {
       if (context.user) {
         const user = await User.findOne({username: context.user.username});
@@ -107,28 +91,27 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    addFriend: async (parent, { friendId }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { friends: friendId } },
-          { new: true }
-        ).populate('friends');
-
-        return updatedUser;
-      }
-
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    updateMe: async (parent, {email, degree, about}, context) => {
+    updateMe: async (parent, {email, phone, degree, about}, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           {_id: context.user._id},
-          {$set: {email: email, degree: degree, about: about}},
+          {$set: {email: email, phone: phone, degree: degree, about: about}},
           {new: true}
         )
         return updatedUser;
       }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    deactivateJob: async(parent, {jobId, active}, context) => {
+      if (context.user) {
+        const updatedJob = await Job.findOneAndUpdate(
+          {_id: jobId},
+          {$set: {active: active}},
+          {new: true}
+        )
+        return updatedJob;
+      }
+      throw new AuthenticationError('You need to be logged in!');
     }
   }
 };

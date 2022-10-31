@@ -1,24 +1,31 @@
 import React, { useState } from "react";
-
+import { useQuery } from "@apollo/client";
 import { useMutation } from "@apollo/client";
 import { ADD_JOB } from "../../utils/mutations";
 import { QUERY_JOBS, QUERY_ME } from "../../utils/queries";
 
+
+
 const JobForm = () => {
+  const { data: userData } = useQuery(QUERY_ME);
+  console.log(userData);
+  const school = userData.me.school;
   const [jobText, setText] = useState({
+    active: true,
     subject: "",
     grade: "",
     dates: "",
     description: "",
+    school: school
   });
   const [characterCount, setCharacterCount] = useState(0);
-
   const [addJob, { error }] = useMutation(ADD_JOB, {
     update(cache, { data: { addJob } }) {
       // could potentially not exist yet, so wrap in a try/catch
       try {
         // update me array's cache
         const { me } = cache.readQuery({ query: QUERY_ME });
+
         cache.writeQuery({
           query: QUERY_ME,
           data: { me: { ...me, jobs: [...me.jobs, addJob] } },
@@ -74,7 +81,7 @@ const JobForm = () => {
           className="flex-row justify-center justify-space-between-md align-stretch"
           onSubmit={handleFormSubmit}
         >
-          <label>Subject</label>
+          <label className="text-dark">Subject:</label>
           <input
             placeholder="Mathematics, Social Studies, etc..."
             type="text"
@@ -82,7 +89,7 @@ const JobForm = () => {
             className="form-input col-12 col-md-12"
             onChange={handleChange}
           ></input>
-          <label>Grade</label>
+          <label className="text-dark">Grade:</label>
           <input
             placeholder="4th, 9th, 11th, etc..."
             type="text"
@@ -90,7 +97,7 @@ const JobForm = () => {
             className="form-input col-12 col-md-12"
             onChange={handleChange}
           ></input>
-          <label>Dates</label>
+          <label className="text-dark">Dates:</label>
           <input
             placeholder="(ex. November 12th-16th)"
             type="text"
@@ -98,7 +105,7 @@ const JobForm = () => {
             className="form-input col-12 col-md-12"
             onChange={handleChange}
           ></input>
-          <label>Description</label>
+          <label className="text-dark">Description:</label>
           <textarea
             placeholder="Your responsibilities will be..."
             name="description"
@@ -114,9 +121,12 @@ const JobForm = () => {
             Character Count: {characterCount}/280
             {error && <span className="ml-2">Something went wrong...</span>}
           </p>
-          <button className="btn col-12 col-md-3" type="submit">
-            Submit
-          </button>
+          <div className="w-75 mr-auto ml-auto">
+            <br />
+            <button className="btn btn-primary col-12 w-100" type="submit">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

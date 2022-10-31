@@ -28,19 +28,17 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_JOB = gql`
-  mutation addJob($subject: String!, $grade: String!, $dates: String!, $description: String!) {
-    addJob(subject: $subject, grade: $grade, dates: $dates, description: $description) {
+  mutation addJob($active: Boolean!, $subject: String!, $grade: String!, $dates: String!, $school: String!, $description: String!) {
+    addJob(active: $active, subject: $subject, grade: $grade, dates: $dates, school: $school, description: $description) {
       _id
+      active
       description
       subject
       grade
       dates
+      school
       createdAt
       username
-      reactionCount
-      reactions {
-        _id
-      }
     }
   }
 `;
@@ -54,51 +52,41 @@ export const ADD_APPLICATION = gql`
         _id
         username
         email
-        about
+        phone
         degree
       }
     }
   }
+`;
+
+export const DEACTIVATE_JOB = gql`
+  mutation deactivateJob($jobId: ID!, $active: Boolean!) {
+    deactivateJob(jobId: $jobId, active: $active) {
+      _id
+      active
+    }
+  }
 `
 
-export const ADD_REACTION = gql`
-  mutation addReaction($jobId: ID!, $reactionBody: String!) {
-    addReaction(jobId: $jobId, reactionBody: $reactionBody) {
+export const UPDATE_ME = gql`
+  mutation updateMe($email: String, $phone: String, $degree: Boolean, $about: String) {
+    updateMe(email: $email, phone: $phone, degree: $degree, about: $about) {
       _id
-      reactionCount
-      reactions {
+      username
+      email
+      phone
+      degree
+      about
+      admin
+      jobs {
         _id
-        reactionBody
+        active
+        description
+        dates
+        grade
+        subject
         createdAt
-        username
       }
     }
   }
-`;
-
-export const ADD_FRIEND = gql`
-  mutation addFriend($id: ID!) {
-    addFriend(friendId: $id) {
-      _id
-      username
-      friendCount
-      friends {
-        _id
-        username
-      }
-    }
-  }
-`;
-
-export const REMOVE_FRIEND = gql`
-  mutation removeFriend($id: ID!) {
-    removeFriend(id: $id) {
-      _id
-      username
-      friends {
-        _id
-        username
-      }
-    }
-  }
-`;
+`

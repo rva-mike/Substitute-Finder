@@ -1,13 +1,15 @@
 const { Schema, model } = require('mongoose');
-const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
 const jobSchema = new Schema(
   {
+    active: {
+      type: Boolean,
+      required: true
+    },
     description: {
       type: String,
       required: 'You need to leave a job!',
-      // minlength: 1,
       maxlength: 280
     },
     subject: {
@@ -22,6 +24,10 @@ const jobSchema = new Schema(
       type: String,
       required: true
     },
+    school: {
+      type: String,
+      required: true
+    },
     createdAt: {
       type: Date,
       default: Date.now,
@@ -31,7 +37,6 @@ const jobSchema = new Schema(
       type: String,
       required: true
     },
-    reactions: [reactionSchema],
     applications: [
       {
         type: Schema.Types.ObjectId,
@@ -46,10 +51,6 @@ const jobSchema = new Schema(
     }
   }
 );
-
-jobSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
-});
 
 jobSchema.virtual('applicationCount').get(function() {
   return this.applications.length;
