@@ -69,7 +69,7 @@ The nodemon package - Simplifies your development environment by automatically r
 
 
   ## Questions
-  Please send me an email to any of our Developers for additional questions.
+  Please send an email to any of our Developers for additional questions.
 
  MikeLevy Email: mike.levy.rva@gmail.com GitHub Profile: https://github.com/rva-mike
 
