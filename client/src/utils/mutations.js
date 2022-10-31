@@ -67,3 +67,27 @@ export const DEACTIVATE_JOB = gql`
     }
   }
 `
+
+export const UPDATE_ME = gql`
+  mutation updateMe($email: String, $phone: String, $degree: Boolean, $about: String) {
+    updateMe(email: $email, phone: $phone, degree: $degree, about: $about) {
+      _id
+      username
+      email
+      phone
+      degree
+      about
+      friendCount
+      admin
+      jobs {
+        _id
+        active
+        description
+        dates
+        grade
+        subject
+        createdAt
+      }
+    }
+  }
+`

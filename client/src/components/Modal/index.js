@@ -70,7 +70,7 @@ const ProfileModal = () => {
   };
   return (
     <div>
-      <button className='btn btn-lg btn-info' onClick={openModal}>Edit Profile</button>
+      <button className='btn btn-info edit-btn mr-auto ml-auto w-100 mb-3 ' onClick={openModal}>Edit Profile</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -90,7 +90,7 @@ const ProfileModal = () => {
           ></input>
           <label>Phone Number:</label>
           <input
-            placeholder={userData?.me.phone_number || '(Ex: 555-555-5555)'}
+            placeholder={userData?.me.phone || '(Ex: 555-555-5555)'}
             type="text"
             name="phone_number"
             className="form-input col-12 col-md-12"
@@ -121,4 +121,4 @@ const ProfileModal = () => {
   );
 }
 
-export default Modal;
+export default ProfileModal;

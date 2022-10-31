@@ -183,6 +183,11 @@ nav a:hover, nav a:focus {
   display: flex !important;
 }
 
+.edit-btn {
+  display: flex !important;
+  max-width: none !important;
+}
+
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
