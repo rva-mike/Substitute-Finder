@@ -72,7 +72,8 @@ const SingleJob = () => {
           <span style={{ fontWeight: 700 }}>
             {job.username}
           </span>
-          {' |  '}job posted on {job.createdAt}
+          &nbsp;
+          {'|'}&nbsp;job posted on {job.createdAt}
         </p>
         <div className="card-body">
         <p><b>Date(s): </b>{job.dates}<br /><b>School: </b>{job.school}<br />{job.grade} grade | {job.subject}</p>
