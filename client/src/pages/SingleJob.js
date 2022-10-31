@@ -61,9 +61,9 @@ const SingleJob = () => {
   return (
     <div>
       {Auth.loggedIn() && admin && (
-        <form onSubmit={handleDeactivate}>
-          <button className="btn btn-danger" type="submit">Close Job Listing</button> 
-        </form>
+          <form onSubmit={handleDeactivate}>
+            <button className="btn btn-danger mb-3" type="submit">Close Job Listing</button> 
+          </form>
       )}
       <div className="card mb-3">
         <p className="card-header">

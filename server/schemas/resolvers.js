@@ -75,32 +75,6 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    addReaction: async (parent, { jobId, reactionBody }, context) => {
-      if (context.user) {
-        const updatedJob = await Job.findOneAndUpdate(
-          { _id: jobId },
-          { $push: { reactions: { reactionBody, username: context.user.username } } },
-          { new: true, runValidators: true }
-        );
-
-        return updatedJob;
-      }
-
-      throw new AuthenticationError('You need to be logged in!');
-    },
-    addFriend: async (parent, { friendId }, context) => {
-      if (context.user) {
-        const updatedUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { friends: friendId } },
-          { new: true }
-        ).populate('friends');
-
-        return updatedUser;
-      }
-
-      throw new AuthenticationError('You need to be logged in!');
-    },
     updateMe: async (parent, {email, degree, about}, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(

@@ -17,7 +17,6 @@ const userSchema = new Schema(
     },
     phone: {
       type: String,
-      required: true,
     },
     password: {
       type: String,
@@ -73,10 +72,6 @@ userSchema.pre('save', async function(next) {
 userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
-
-userSchema.virtual('friendCount').get(function() {
-  return this.friends.length;
-});
 
 userSchema.virtual('jobCount').get(function() {
   return this.jobs.length;

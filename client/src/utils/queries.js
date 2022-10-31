@@ -12,13 +12,7 @@ export const QUERY_JOBS = gql`
       school
       subject
       dates
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
+      applicationCount
     }
   }
 `;
@@ -55,10 +49,6 @@ export const QUERY_USER = gql`
       email
       friendCount
       school
-      friends {
-        _id
-        username
-      }
       jobs {
         _id
         description
@@ -78,7 +68,6 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      friendCount
       admin
       school
       jobs {
@@ -90,17 +79,6 @@ export const QUERY_ME = gql`
         subject
         school
         createdAt
-        reactionCount
-        reactions {
-          _id
-          createdAt
-          reactionBody
-          username
-        }
-      }
-      friends {
-        _id
-        username
       }
     }
   }
@@ -113,10 +91,6 @@ export const QUERY_ME_BASIC = gql`
       username
       email
       admin
-      friends {
-        _id
-        username
-      }
     }
   }
 `;

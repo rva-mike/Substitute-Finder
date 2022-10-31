@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
 const jobSchema = new Schema(
@@ -38,7 +37,6 @@ const jobSchema = new Schema(
       type: String,
       required: true
     },
-    reactions: [reactionSchema],
     applications: [
       {
         type: Schema.Types.ObjectId,
@@ -53,10 +51,6 @@ const jobSchema = new Schema(
     }
   }
 );
-
-jobSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
-});
 
 jobSchema.virtual('applicationCount').get(function() {
   return this.applications.length;

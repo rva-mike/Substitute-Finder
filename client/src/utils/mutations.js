@@ -39,10 +39,6 @@ export const ADD_JOB = gql`
       school
       createdAt
       username
-      reactionCount
-      reactions {
-        _id
-      }
     }
   }
 `;
@@ -71,45 +67,3 @@ export const DEACTIVATE_JOB = gql`
     }
   }
 `
-
-export const ADD_REACTION = gql`
-  mutation addReaction($jobId: ID!, $reactionBody: String!) {
-    addReaction(jobId: $jobId, reactionBody: $reactionBody) {
-      _id
-      reactionCount
-      reactions {
-        _id
-        reactionBody
-        createdAt
-        username
-      }
-    }
-  }
-`;
-
-export const ADD_FRIEND = gql`
-  mutation addFriend($id: ID!) {
-    addFriend(friendId: $id) {
-      _id
-      username
-      friendCount
-      friends {
-        _id
-        username
-      }
-    }
-  }
-`;
-
-export const REMOVE_FRIEND = gql`
-  mutation removeFriend($id: ID!) {
-    removeFriend(id: $id) {
-      _id
-      username
-      friends {
-        _id
-        username
-      }
-    }
-  }
-`;

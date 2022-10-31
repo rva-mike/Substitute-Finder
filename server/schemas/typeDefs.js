@@ -9,10 +9,8 @@ const typeDefs = gql`
     about: String
     school: String
     admin: Boolean
-    friendCount: Int
     jobCount: Int
     jobs: [Job]
-    friends: [User]
   }
 
   type Job {
@@ -25,17 +23,8 @@ const typeDefs = gql`
     school: String
     createdAt: String
     username: String
-    reactionCount: Int
     applicationCount: Int
-    reactions: [Reaction]
     applications: [User]
-  }
-
-  type Reaction {
-    _id: ID
-    reactionBody: String
-    createdAt: String
-    username: String
   }
 
   type Auth {
@@ -55,9 +44,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!, school: String, admin: Boolean): Auth
     addJob(active: Boolean!, subject: String!, grade: String!, dates: String! school: String!  description: String!): Job
-    addReaction(jobId: ID!, reactionBody: String!): Job
     addApplication(jobId: ID!): Job
-    addFriend(friendId: ID!): User
     updateMe(email: String, degree: String, about: String): User
     deactivateJob(jobId: ID!, active: Boolean!): Job
   }
