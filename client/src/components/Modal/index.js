@@ -121,4 +121,4 @@ const ProfileModal = () => {
   );
 }
 
-export default ProfileModal;
+export default Modal;

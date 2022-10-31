@@ -11,6 +11,7 @@ import { Container } from '../components/Container';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
+import Modal from '../components/Modal'
 
 const Profile = (props) => {
   const { username: userParam } = useParams();
@@ -51,7 +52,8 @@ const Profile = (props) => {
 
   return (
     <div className='ml-auto m-auto w-60'>
-      
+      <Modal/>
+
       <div className='card'>
           <div className="ml-auto mr-auto">
               {/* <ImageUpload/> */}
