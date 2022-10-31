@@ -7,6 +7,8 @@ import FriendList from '../components/FriendList';
 import ImageUpload from '../components/ImageUpload';
 import Navbar from '../components/Navbar';
 import Contact from '../components/Contact';
+import { Container } from '../components/Container';
+
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -23,6 +25,12 @@ const Profile = (props) => {
 
   const user = data?.me || data?.user || {};
 
+  const triggerText = 'Edit Profile';
+  const onSubmit = (event) => {
+    event.preventDefault(event);
+    console.log(event.target.email.value);
+    console.log(event.target.about.value);
+  };
 
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -94,6 +102,7 @@ const Profile = (props) => {
             friends={user.friends}
           />
         </div>
+          <Container triggerText={triggerText} onSubmit={onSubmit} />
         <div id='contactnav' className="flex-row mb-3">
       <h2 className="bg-dark text-secondary p-3 display-inline-block">
           <Contact/>
