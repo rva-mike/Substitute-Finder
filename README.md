@@ -7,7 +7,7 @@
 # Sub-Atomic
 
   ## Description
-   This is an app designed to make the process of a finding a substitutue teacher faster and easier. To use this app, a user needs to sign up through the signup form. They then have an option to be an Admin (teacher) and be able to post jobs, or sign up as a Substitute to see and apply for jobs. When an applicant applies for a job the Admins can see there profiles attached to that specific job and contact them as needed. Both types of users are able to add and save relevant information to their profile.
+   This is an app designed to make the process of a finding a Substitutue Teacher faster and easier. To use this app, users need to sign up through the signup form. They then have an option to be an Admin (teacher) and be able to post jobs, or sign up as a Substitute to see and apply for jobs. When an applicant applies for a job the Admins can see their profiles attached to that specific job and contact them as needed. Both types of users are able to add and save relevant information to their profile.
    
 
    
