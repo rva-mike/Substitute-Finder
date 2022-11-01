@@ -54,7 +54,7 @@ const Home = () => {
             <h1 className='welcome text-center mt-5 mb-0'><span>Welcome!</span></h1>
           </div>
           <div>
-            <p className='text-center welcome-sub mt-0'>login or signup to get started</p>
+            <p className='text-center welcome-sub mt-0'>log in or sign up to get started</p>
           </div>
         </div>
       )}
