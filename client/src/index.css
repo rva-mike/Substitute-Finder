@@ -242,7 +242,9 @@ nav a:focus {
 
 .application-cards {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  margin-right: 4px !important;
 }
 
 .application-card {
