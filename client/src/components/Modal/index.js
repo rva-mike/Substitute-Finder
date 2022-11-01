@@ -72,7 +72,7 @@ const ProfileModal = () => {
   return (
     <div>
       <button
-        className="btn btn-primary edit-btn mr-auto ml-auto w-100 mb-3 "
+        className="btn no-border-btn btn-primary edit-btn mr-auto ml-auto w-100 mb-3 "
         onClick={openModal}
       >
         Edit Profile
@@ -83,8 +83,9 @@ const ProfileModal = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Profile Modal"
+  
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Edit Profile</h2>
+        <h2 className="text-dark" ref={(_subtitle) => (subtitle = _subtitle)}>Edit Profile</h2>
         <form className="flex-row" onSubmit={handleFormSubmit}>
           <label>Email:</label>
           <input
@@ -108,7 +109,7 @@ const ProfileModal = () => {
             checked={userText.degree}
             name="degree"
             id="degree"
-            className="ml-3 form-checkbox-input"
+            className="ml-3 form-checkbox-input checkbox"
             onChange={handleChange}
           ></input>
           <div className="w-100">
@@ -126,10 +127,10 @@ const ProfileModal = () => {
             className="form-input col-12 col-md-12"
             onChange={handleChange}
           ></textarea>
-          <button className="btn btn-success m-1" type="submit">
+          <button className="btn no-border-btn btn-success m-1" type="submit">
             Save
           </button>
-          <button className="btn btn-danger m-1" onClick={closeModal}>
+          <button className="btn no-border-btn btn-danger m-1" onClick={closeModal}>
             Exit
           </button>
         </form>

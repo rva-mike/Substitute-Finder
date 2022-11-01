@@ -40,8 +40,8 @@ const Profile = (props) => {
       <div className="card">
         <div className="ml-auto mr-auto">{/* <ImageUpload/> */}</div>
         {Auth.loggedIn() && hasDegree && (
-          <div className="flex-row ml-auto mr-auto">
-            <h1 className="p-3 display-inline-block text-dark">
+          <div className=" ml-auto mr-auto text-center">
+            <h1 className="pt-3 display-inline-block text-dark">
               {user.username}
               &nbsp;
               <FaCheckCircle className="email-icon" />
@@ -51,22 +51,23 @@ const Profile = (props) => {
         )}
         {Auth.loggedIn() && !hasDegree && (
           <div className="flex-row ml-auto mr-auto">
-            <h1 className="p-3 display-inline-block text-dark">
+            <h1 className="pt-3 display-inline-block text-dark">
               {user.username}
               <hr />
             </h1>
           </div>
         )}
-        <div className="flex-row mb-3 ml-auto mr-auto">
-          <p>{user.about}</p>
+        <div className="flex-row mb-0 ml-auto mr-auto">
+          <p className="text-dark">{user.about}</p>
+       
         </div>
-        <div className="flex-row ml-3">
-          <h5 className="text-dark">
+        <div className="flex-column ml-3">
+          <hr></hr>
+          <h5 className="text-dark text-center">
             Contact Me
-            <hr />
           </h5>
         </div>
-        <div className="flex-row ml-3 mr-3">
+        <div className="flex-column text-center ml-3 mr-3">
           <p className="w-100">
             <span className="text-dark">Email: </span>
             {user.email}&nbsp;

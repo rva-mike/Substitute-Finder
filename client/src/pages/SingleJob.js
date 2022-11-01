@@ -56,30 +56,30 @@ const SingleJob = () => {
   const applied = job.applications.find((app) => app._id === userData?.me._id);
 
   return (
-    <div>
+    <div className="text-center single-job-close">
       {Auth.loggedIn() && admin && (
-        <form
-          className="flex-row justify-center justify-space-between-md align-stretch"
-          onSubmit={handleDeactivate}
-        >
-          <div className="w-50 ml-auto">
-            <button
-              className=" btn btn-danger close-btn ml-auto w-100 mb-3 "
-              type="submit"
-            >
-              Close Job Listing
-            </button>
-          </div>
-        </form>
+          <form
+            className="flex-row justify-center align-stretch"
+            onSubmit={handleDeactivate}
+          >
+            <div className=" w-100 ">
+              <button
+                className="no-border-btn btn btn-danger w-100 mb-3 "
+                type="submit"
+              >
+                Close Job Listing
+              </button>
+            </div>
+          </form>
       )}
       <div className="card mb-3">
         <p className="card-header">
           <span style={{ fontWeight: 700 }}>{job.username}</span>
-          &nbsp;
-          {"|"}&nbsp;job posted on {job.createdAt}
+          &nbsp;posted on {job.createdAt}
         </p>
         <div className="card-body">
           <p>
+          <p className="text-dark job-description">{job.description}</p>
             <b>Date(s): </b>
             {job.dates}
             <br />
@@ -88,7 +88,7 @@ const SingleJob = () => {
             <br />
             {job.grade} grade | {job.subject}
           </p>
-          <p>{job.description}</p>
+          
         </div>
       </div>
 
@@ -100,7 +100,7 @@ const SingleJob = () => {
 
       {Auth.loggedIn() && !admin && !applied && (
         <form onSubmit={handleFormSubmit}>
-          <button className="btn btn-success col-12 col-md-3" type="submit">
+          <button className="btn no-border-btn btn-success col-12 col-md-3" type="submit">
             Apply
           </button>
         </form>

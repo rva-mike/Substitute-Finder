@@ -1,10 +1,10 @@
-import React from "react";
-import JobList from "../components/JobList";
-import JobForm from "../components/JobForm";
+import React from 'react';
+import JobList from '../components/JobList';
+import JobForm from '../components/JobForm';
 
-import Auth from "../utils/auth";
-import { useQuery } from "@apollo/client";
-import { QUERY_JOBS, QUERY_ME } from "../utils/queries";
+import Auth from '../utils/auth';
+import { useQuery } from '@apollo/client';
+import { QUERY_JOBS, QUERY_ME } from '../utils/queries';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_JOBS);
@@ -28,26 +28,38 @@ const Home = () => {
             {loading ? (
               <div>Loading...</div>
             ) : (
-              <JobList jobs={jobs} title="Available Jobs" />
+              <JobList
+                jobs={jobs}
+                title="Available Jobs"
+              />
             )}
           </div>
         )}
         {loggedIn && admin && (
-          <div className={`col-12 mb-3 col-lg-8`}>
+          <div id="job-list" className={`col-12 mb-3 col-lg-8`}>
             {loading ? (
               <div>Loading...</div>
             ) : (
-              <JobList jobs={myJobs} title="My Jobs" />
+              <JobList
+                jobs={myJobs}
+                title="My Jobs"
+              />
             )}
           </div>
         )}
-        {!loggedIn && (
-          <div>
-            <h1>Welcome to Sub-Atomic!</h1>
-          </div>
-        )}
       </div>
-    </main>
+      {!loggedIn && (
+        <div id='welcome-container'>
+          <div>
+            <h1 className='welcome text-center mt-5 mb-0'><span>Welcome!</span></h1>
+          </div>
+          <div>
+            <p className='text-center welcome-sub mt-0'>login or signup to get started</p>
+          </div>
+        </div>
+      )}
+
+    </main >
   );
 };
 
