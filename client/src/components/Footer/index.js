@@ -9,7 +9,7 @@ const Footer = () => {
         <a
           rel="noopener noreferrer"
           target="_blank"
-          class="gitlink"
+          className="gitlink"
           href="https://reactjs.org/"
         >
           Built with React

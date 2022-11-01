@@ -21,7 +21,7 @@ const JobList = ({ jobs, title }) => {
                 >
                   {job.username}
                 </Link>{" "}
-                job on {job.createdAt}
+                job posted on {job.createdAt}
               </p>
               <div className="card-body">
                 <Link to={`/job/${job._id}`}>
