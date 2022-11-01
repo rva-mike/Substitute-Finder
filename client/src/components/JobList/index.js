@@ -13,7 +13,7 @@ const JobList = ({ jobs, title}) => {
         jobs.filter(job => job.active === true)
         .map(job => (
           <div key={job._id} className="card col-12 mb-3">
-            <p className="card-header">
+            <p className="card-header job-list-header">
               <Link
                 to={`/profile/${job.username}`}
                 style={{ fontWeight: 700 }}

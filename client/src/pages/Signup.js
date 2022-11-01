@@ -86,20 +86,22 @@ const Signup = () => {
               />
               {formState.admin && (
                 <>
-                  <label htmlFor="school">Select your school </label>
-                  <select name="school" id="school" onChange={handleChange}>
-                    <option value="HTM Elementary">HTM Elementary</option>
-                    <option value="Code Academy">Code Academy</option>
-                    <option value="Express Middle School">
-                      Express Middle School
-                    </option>
-                    <option value="Performant High">
-                      Performant High School
-                    </option>
-                  </select>
+                  <div className="mb-3 text-center">
+                    <label htmlFor="school">Select your school </label>
+                    <select name="school" id="school" onChange={handleChange}>
+                      <option value="HTM Elementary">HTM Elementary</option>
+                      <option value="Code Academy">Code Academy</option>
+                      <option value="Express Middle School">
+                        Express Middle School
+                      </option>
+                      <option value="Performant High">
+                        Performant High School
+                      </option>
+                    </select>
+                  </div>
                 </>
               )}
-              <button className="btn d-block w-100 no-border-btn btn-primary" type="submit">
+              <button className=" btn d-block w-100 no-border-btn btn-primary" type="submit">
                 Submit
               </button>
             </form>

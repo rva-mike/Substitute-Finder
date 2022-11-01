@@ -73,7 +73,7 @@ const SingleJob = () => {
           </form>
       )}
       <div className="card mb-3">
-        <p className="card-header">
+        <p className="card-header single-job-header">
           <span style={{ fontWeight: 700 }}>{job.username}</span>
           &nbsp;{job.createdAt}
         </p>

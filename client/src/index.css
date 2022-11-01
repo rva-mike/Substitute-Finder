@@ -1095,14 +1095,17 @@ input {
 
 @media screen and (max-width: 450px) {
 
-  .card-header {
+  /* .card-header {
     font-size: 16px !important;
-  }
+  } */
 
   .application-card {
     width: 400px !important;
   }
 
+  .job-list-header, .single-job-header {
+    font-size: 16px !important;
+  }
 
 
 }
