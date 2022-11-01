@@ -7,7 +7,7 @@
 # Sub-Atomic
 
   ## Description
-   This is an app designed to make the process of a finding a Substitutue Teacher faster and easier. To use this app, users need to sign up through the signup form. They then have an option to be an Admin (teacher) and be able to post jobs, or sign up as a Substitute to see and apply for jobs. When an applicant applies for a job the Admins can see their profiles attached to that specific job and contact them as needed. Both types of users are able to add and save relevant information to their profile.
+   This is an app designed to make the process of a finding a substitutue teacher faster and easier. To use this app, users need to sign up through the signup form. They then have an option to be an Admin (teacher) and be able to post jobs, or sign up as a substitute to see and apply for jobs. When an applicant applies for a job, the Admins can see their profiles attached to that specific job and contact them as needed. Both types of users are able to add and save relevant information to their profile.
    
 
    
@@ -15,7 +15,7 @@
    
    
    
-'Sub Atomic' uses the MERN (MongoDB, Express.js, React, and Node.js) tech stack. It combines a back-end implemented with Node.js and Express.js API with a MongoDB database with a React front-end to create a single-page MERN application.
+'Sub Atomic' uses the MERN (MongoDB, Express.js, React, and Node.js) tech stack. It combines a back-end implemented with Node.js and Express.js API with a MongoDB database using a React front-end to create a single-page MERN application.
    
    ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
    ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
@@ -60,7 +60,7 @@ The nodemon package - Simplifies your development environment by automatically r
 
 
   ## Usage
-  Used by Teachers, Admins and Substitute teachers to help find suitable candidates for job openings. 
+  Used by teachers, Admins and substitute teachers to help find suitable candidates or apply for job openings. 
   
   ## Link 
   
