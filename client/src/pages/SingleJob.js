@@ -75,7 +75,7 @@ const SingleJob = () => {
       <div className="card mb-3">
         <p className="card-header">
           <span style={{ fontWeight: 700 }}>{job.username}</span>
-          &nbsp;posted on {job.createdAt}
+          &nbsp;{job.createdAt}
         </p>
         <div className="card-body">
           <p>
