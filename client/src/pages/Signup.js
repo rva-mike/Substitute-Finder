@@ -55,6 +55,7 @@ const Signup = () => {
                 name="admin"
                 id="admin"
                 onChange={handleChange}
+                className='checkbox'
               ></input>
               <input
                 className="form-input"
