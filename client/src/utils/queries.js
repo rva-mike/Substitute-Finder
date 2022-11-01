@@ -58,7 +58,6 @@ export const QUERY_USER = gql`
         grade
         subject
         createdAt
-        reactionCount
       }
     }
   }

@@ -20,8 +20,10 @@ const Profile = (props) => {
     variables: { username: userParam },
   });
 
-  const user = data?.me || data?.user || {};
+  console.log("userparam:"+ userParam);
 
+  const user = data?.me || data?.user || {};
+  console.log(data);
 
   const hasDegree = user.degree;
   console.log(hasDegree);
