@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { useQuery, useMutation } from "@apollo/client";
 import { UPDATE_ME } from "../../utils/mutations";
 import { QUERY_ME } from "../../utils/queries";
-
+Modal.setAppElement('#root')
 // import { ProfileForm } from '../ProfileForm';
 
 const customStyles = {
@@ -20,6 +20,9 @@ const customStyles = {
 const ProfileModal = () => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
+  const { data } = useQuery(QUERY_ME);
+
+  const userData = data?.me || {};
 
   function openModal() {
     setIsOpen(true);
@@ -34,13 +37,12 @@ const ProfileModal = () => {
     setIsOpen(false);
   }
 
-  const { data: userData } = useQuery(QUERY_ME);
 
   const [userText, setText] = useState({
-    email: userData.me.email,
-    phone: userData.me.phone,
-    degree: userData.me.degree,
-    about: userData.me.about,
+    email: userData.email,
+    phone: userData.phone,
+    degree: userData.degree,
+    about: userData.about,
   });
 
   const [updateMe, { error }] = useMutation(UPDATE_ME);
@@ -83,13 +85,13 @@ const ProfileModal = () => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Profile Modal"
-  
+
       >
         <h2 className="text-dark" ref={(_subtitle) => (subtitle = _subtitle)}>Edit Profile</h2>
         <form className="flex-row" onSubmit={handleFormSubmit}>
           <label>Email:</label>
           <input
-            placeholder={userText.email || "(Ex: someone@gmail.com)"}
+            placeholder={userData?.email || "(Ex: someone@gmail.com)"}
             type="text"
             name="email"
             className="form-input col-12 col-md-12"
@@ -97,7 +99,7 @@ const ProfileModal = () => {
           ></input>
           <label>Phone Number:</label>
           <input
-            placeholder={userText.phone || "(Ex: 555-555-5555)"}
+            placeholder={userData?.phone || "(Ex: 555-555-5555)"}
             type="text"
             name="phone"
             className="form-input col-12 col-md-12"
@@ -106,7 +108,7 @@ const ProfileModal = () => {
           <label>I have an associates or bachelor degree:</label>
           <input
             type={`checkbox`}
-            checked={userText.degree}
+            checked={userData?.degree}
             name="degree"
             id="degree"
             className="ml-3 form-checkbox-input checkbox"
@@ -119,7 +121,7 @@ const ProfileModal = () => {
           </div>
           <textarea
             placeholder={
-              userText.about ||
+              userData?.about ||
               "Tell us a little about yourself! (ex. your preferred subject, grade level to work with, etc.)"
             }
             name="about"
