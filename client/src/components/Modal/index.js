@@ -37,10 +37,10 @@ const ProfileModal = () => {
   const { data: userData } = useQuery(QUERY_ME);
   
   const [userText, setText] = useState({
-    email: "",
-    phone: "",
-    degree: false,
-    about: "",
+    email: userData.me.email,
+    phone: userData.me.phone,
+    degree: userData.me.degree,
+    about: userData.me.about,
   });
 
   const [updateMe, { error }] = useMutation(UPDATE_ME);
@@ -48,9 +48,12 @@ const ProfileModal = () => {
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
+    const degree = document.getElementById("degree").checked;
     setText({
       ...userText,
       [name]: value,
+      degree: degree
+
     });
     console.log(userText);
   };
@@ -82,7 +85,7 @@ const ProfileModal = () => {
         <form className="flex-row" onSubmit={handleFormSubmit}>
           <label>Email:</label>
           <input
-            placeholder={userData?.me.email || '(Ex: someone@gmail.com)'}
+            placeholder={userText.email || '(Ex: someone@gmail.com)'}
             type="text"
             name="email"
             className="form-input col-12 col-md-12"
@@ -90,7 +93,7 @@ const ProfileModal = () => {
           ></input>
           <label>Phone Number:</label>
           <input
-            placeholder={userData?.me.phone || '(Ex: 555-555-5555)'}
+            placeholder={userText.phone || '(Ex: 555-555-5555)'}
             type="text"
             name="phone"
             className="form-input col-12 col-md-12"
@@ -99,6 +102,7 @@ const ProfileModal = () => {
           <label>I have an associates or bachelor degree:</label>
           <input
             type={`checkbox`}
+            checked={userText.degree}
             name="degree"
             id="degree"
             className='ml-3 form-checkbox-input'
@@ -106,7 +110,7 @@ const ProfileModal = () => {
           ></input>
           <label className='w'>About Me:</label>
           <textarea
-            placeholder={userData?.me.about || 'Tell us a little about yourself! (ex. your preferred subject, grade level to work with, etc.)'}
+            placeholder={userText.about || 'Tell us a little about yourself! (ex. your preferred subject, grade level to work with, etc.)'}
             name="about"
             id="about"
             className="form-input col-12 col-md-12"

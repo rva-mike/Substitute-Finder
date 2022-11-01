@@ -61,10 +61,9 @@ function App() {
                 path="/profile" 
                 element={<Profile />} 
               />
-              <Route 
-                path="/job/:id" 
-                element={<SingleJob />} 
-              />
+              <Route path="/profile">
+                <Route path=":username" element={<Profile />} />
+                <Route path="" element={<Profile />} /></Route>
               <Route 
                 path="*" 
                 element={<NoMatch />} 
