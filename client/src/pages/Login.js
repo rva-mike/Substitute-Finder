@@ -68,7 +68,7 @@ const Login = (props) => {
               />
               <button
                 variant="contained"
-                className="btn d-block w-100"
+                className="btn d-block w-100 no-border-btn btn-primary"
                 type="submit"
               >
                 Submit

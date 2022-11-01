@@ -98,7 +98,7 @@ const Signup = () => {
                   </select>
                 </>
               )}
-              <button className="btn d-block w-100" type="submit">
+              <button className="btn d-block w-100 no-border-btn btn-primary" type="submit">
                 Submit
               </button>
             </form>

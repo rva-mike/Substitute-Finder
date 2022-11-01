@@ -125,7 +125,7 @@ const JobForm = () => {
             </p>
             <div className="w-75 mr-auto ml-auto text-center">
               <br />
-              <button className="btn mt-0 col-12 w-100 text-center" type="submit">
+              <button className="btn no-border-btn btn-primary mt-0 col-12 w-100 text-center" type="submit">
                 Submit
               </button>
             </div>
