@@ -4,11 +4,8 @@ import { useMutation } from "@apollo/client";
 import { ADD_JOB } from "../../utils/mutations";
 import { QUERY_JOBS, QUERY_ME } from "../../utils/queries";
 
-
-
 const JobForm = () => {
   const { data: userData } = useQuery(QUERY_ME);
-  console.log(userData);
   const school = userData.me.school;
   const [jobText, setText] = useState({
     active: true,
@@ -16,7 +13,7 @@ const JobForm = () => {
     grade: "",
     dates: "",
     description: "",
-    school: school
+    school: school,
   });
   const [characterCount, setCharacterCount] = useState(0);
   const [addJob, { error }] = useMutation(ADD_JOB, {

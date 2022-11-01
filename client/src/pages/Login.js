@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 // import Button from '@mui/material/Button';
 
-
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
@@ -37,8 +36,8 @@ const Login = (props) => {
 
     // clear form values
     setFormState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
@@ -48,7 +47,7 @@ const Login = (props) => {
         <div className="card">
           <h4 className="card-header">Login</h4>
           <div className="card-body">
-            <form className='login-form' onSubmit={handleFormSubmit}>
+            <form className="login-form" onSubmit={handleFormSubmit}>
               <input
                 className="form-input"
                 placeholder="Your email"
@@ -67,7 +66,11 @@ const Login = (props) => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button variant="contained" className="btn d-block w-100" type="submit">
+              <button
+                variant="contained"
+                className="btn d-block w-100"
+                type="submit"
+              >
                 Submit
               </button>
             </form>

@@ -25,7 +25,6 @@ const Signup = () => {
       admin: admin,
       school: school,
     });
-    console.log(formState);
   };
 
   // submit form
@@ -84,17 +83,21 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              {formState.admin &&
+              {formState.admin && (
                 <>
                   <label htmlFor="school">Select your school </label>
                   <select name="school" id="school" onChange={handleChange}>
                     <option value="HTM Elementary">HTM Elementary</option>
                     <option value="Code Academy">Code Academy</option>
-                    <option value="Express Middle School">Express Middle School</option>
-                    <option value="Performant High">Performant High School</option>
+                    <option value="Express Middle School">
+                      Express Middle School
+                    </option>
+                    <option value="Performant High">
+                      Performant High School
+                    </option>
                   </select>
                 </>
-            }
+              )}
               <button className="btn d-block w-100" type="submit">
                 Submit
               </button>

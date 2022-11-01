@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -13,8 +13,20 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $password: String!, $email: String!, $school: String, $admin: Boolean) {
-    addUser(username: $username, password: $password, email: $email, school: $school, admin: $admin) {
+  mutation addUser(
+    $username: String!
+    $password: String!
+    $email: String!
+    $school: String
+    $admin: Boolean
+  ) {
+    addUser(
+      username: $username
+      password: $password
+      email: $email
+      school: $school
+      admin: $admin
+    ) {
       token
       user {
         _id
@@ -28,8 +40,22 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_JOB = gql`
-  mutation addJob($active: Boolean!, $subject: String!, $grade: String!, $dates: String!, $school: String!, $description: String!) {
-    addJob(active: $active, subject: $subject, grade: $grade, dates: $dates, school: $school, description: $description) {
+  mutation addJob(
+    $active: Boolean!
+    $subject: String!
+    $grade: String!
+    $dates: String!
+    $school: String!
+    $description: String!
+  ) {
+    addJob(
+      active: $active
+      subject: $subject
+      grade: $grade
+      dates: $dates
+      school: $school
+      description: $description
+    ) {
       _id
       active
       description
@@ -66,10 +92,15 @@ export const DEACTIVATE_JOB = gql`
       active
     }
   }
-`
+`;
 
 export const UPDATE_ME = gql`
-  mutation updateMe($email: String, $phone: String, $degree: Boolean, $about: String) {
+  mutation updateMe(
+    $email: String
+    $phone: String
+    $degree: Boolean
+    $about: String
+  ) {
     updateMe(email: $email, phone: $phone, degree: $degree, about: $about) {
       _id
       username
@@ -89,4 +120,4 @@ export const UPDATE_ME = gql`
       }
     }
   }
-`
+`;
