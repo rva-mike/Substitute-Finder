@@ -108,7 +108,8 @@ const ProfileModal = () => {
             className='ml-3 form-checkbox-input'
             onChange={handleChange}
           ></input>
-          <label className='w'>About Me:</label>
+          <div className='w-100'>
+          <label htmlFor='about' className='w'>About Me: </label></div>
           <textarea
             placeholder={userText.about || 'Tell us a little about yourself! (ex. your preferred subject, grade level to work with, etc.)'}
             name="about"
