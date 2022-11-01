@@ -55,7 +55,7 @@ const ProfileModal = () => {
       degree: degree
 
     });
-    console.log(userText);
+
   };
 
   // submit form

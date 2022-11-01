@@ -5,7 +5,6 @@ const JobList = ({ jobs, title}) => {
   if (!jobs.length) {
     return <h3>No Jobs Yet</h3>;
   }
-  console.log(jobs);
   return (
     <div className=''>
       <h3 className='list-heading'>{title}</h3>
