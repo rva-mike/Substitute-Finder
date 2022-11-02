@@ -86,4 +86,4 @@ The nodemon package - Simplifies your development environment by automatically r
 
   Brennan Vlahcevic Email: bvlahcevic5@gmail.com Github: https://github.com/BVlah
 
-  Eliot Cleveland: 
+  Eliot Cleveland: Email: eliothead@live.com Github: https://github.com/eclevela-1234
