@@ -245,6 +245,10 @@ nav a:focus {
 
 }
 
+header {
+  height: 80px !important;
+}
+
 
 .welcome {
   position: relative;
@@ -282,7 +286,6 @@ nav a:focus {
   background-color: #eeeeee !important;
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-  height: 80px !important;
 }
 
 
@@ -1100,10 +1103,9 @@ input {
     text-align: center;
   }
 
-  .nav-bar-links {
-    padding: 5px !important;
+  nav a {
+    padding: 5px !important
   }
-
 
   .list-heading {
     text-align: center;
@@ -1146,8 +1148,8 @@ input {
   }
 
 
-  .nav-bar-links {
-    padding: 5px !important;
+  nav a {
+    padding: 5px !important
   }
 
   .col-sm-1 {
@@ -1248,9 +1250,10 @@ input {
     text-align: center;
   }
 
-  .nav-bar-links {
-    padding: 5px !important;
+  nav a {
+    padding: 5px !important
   }
+
 
 
   
