@@ -1101,6 +1101,7 @@ input {
 @media screen and (min-width: 200px) {
   header {
     text-align: center;
+    height: auto !important;
   }
 
   nav a {
@@ -1145,6 +1146,7 @@ input {
 
   header {
     text-align: center;
+    height: auto !important;
   }
 
 
@@ -1248,6 +1250,7 @@ input {
 
   header {
     text-align: center;
+    height: auto !important;
   }
 
   nav a {
