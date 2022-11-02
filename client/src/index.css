@@ -154,6 +154,7 @@ nav a:focus {
   font-size: 14px !important;
   margin-top: -5px;
   color: white !important;
+  margin-bottom: 0px !important;
 }
 
 
