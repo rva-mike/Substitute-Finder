@@ -245,11 +245,6 @@ nav a:focus {
 
 }
 
-header {
-  height: 80px !important;
-}
-
-
 .welcome {
   position: relative;
   /* -webkit-box-reflect: below -33px linear-gradient(transparent, rgba(0,0,0,0.08)); */
@@ -1101,7 +1096,6 @@ input {
 @media screen and (min-width: 200px) {
   header {
     text-align: center;
-    height: 100px !important
   }
 
   nav a {
@@ -1146,7 +1140,6 @@ input {
 
   header {
     text-align: center;
-    height: 100px !important
   }
 
 
@@ -1250,7 +1243,6 @@ input {
 
   header {
     text-align: center;
-    height: 100px !important
   }
 
   nav a {
@@ -1356,6 +1348,7 @@ input {
 
   header {
     text-align: left;
+    height: 80px !important;
   }
 
   .list-heading {
