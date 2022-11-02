@@ -186,8 +186,8 @@ nav a:focus {
 }
 
 .user-about {
-  margin-left: 4px !important;
-  margin-right: 4px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
 }
 
 .page-title {
@@ -233,15 +233,15 @@ nav a:focus {
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-  background-color: var(--light);
+  background-color: white !important;
   color: var(--dark);
   /* max-width: 1000px; */
   border: none !important;
   box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.48);
   -webkit-box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.48);
   -moz-box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.48);
+  min-width: 350px !important;
 
 }
 
