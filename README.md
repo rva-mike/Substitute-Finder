@@ -82,7 +82,7 @@ The nodemon package - Simplifies your development environment by automatically r
 
  MikeLevy Email: mike.levy.rva@gmail.com GitHub Profile: https://github.com/rva-mike
 
-  Clark Hou Email: chou8395@gmail.com
+  Clark Hou Email: chou8395@gmail.com GitHub Profile: https://github.com/chou8395-XOMYwl
 
   Brennan Vlahcevic Email: bvlahcevic5@gmail.com Github: https://github.com/BVlah
 
