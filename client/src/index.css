@@ -282,6 +282,7 @@ nav a:focus {
   background-color: #eeeeee !important;
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  height: 80px !important;
 }
 
 
