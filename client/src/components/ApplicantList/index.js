@@ -21,7 +21,7 @@ const ApplicantList = ({ applications }) => {
               <br />
               Phone: {application.phone}
               <br />
-              Has Degree: {application.degree}
+              Has Degree: {application.degree? "Yes": "No"}
             </p>
           </div>
         ))}
