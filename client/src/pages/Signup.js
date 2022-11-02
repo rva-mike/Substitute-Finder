@@ -87,7 +87,7 @@ const Signup = () => {
               {formState.admin && (
                 <>
                   <div className="mb-3 text-center">
-                    <label htmlFor="school">Select your school </label>
+                    <label className="mr-2" htmlFor="school">Select your school </label>
                     <select name="school" id="school" onChange={handleChange}>
                       <option value="HTM Elementary">HTM Elementary</option>
                       <option value="Code Academy">Code Academy</option>
