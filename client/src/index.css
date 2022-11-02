@@ -239,9 +239,9 @@ nav a:focus {
   color: var(--dark);
   /* max-width: 1000px; */
   border: none !important;
-  box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.48);
-  -webkit-box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.48);
-  -moz-box-shadow: 5px 5px 4px -4px rgba(0,0,0,0.48);
+  box-shadow: 5px 5px 4px -4px rgba(0, 0, 0, 0.48);
+  -webkit-box-shadow: 5px 5px 4px -4px rgba(0, 0, 0, 0.48);
+  -moz-box-shadow: 5px 5px 4px -4px rgba(0, 0, 0, 0.48);
 
 }
 
@@ -1118,11 +1118,15 @@ input {
     width: 400px !important;
   }
 
-  .job-list-header, .single-job-header {
+  .job-list-header,
+  .single-job-header {
     font-size: 16px !important;
   }
 
-
+  header {
+    text-align: center;
+    padding-bottom: 7px !important;
+  }
 }
 
 
@@ -1239,7 +1243,7 @@ input {
     padding-bottom: 7px !important;
   }
 
- 
+
 
   .col-md-1 {
     flex: 0 0 calc(100% * 1 / 12 - 0.5%);
