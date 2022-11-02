@@ -283,7 +283,9 @@ nav a:focus {
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
 
-
+.profile-card {
+  max-width: 270px !important;
+}
 
 .card-body {
   padding: 1.5% !important;

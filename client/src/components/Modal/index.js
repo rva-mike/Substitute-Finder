@@ -74,7 +74,7 @@ const ProfileModal = () => {
   return (
     <div>
       <button
-        className="btn no-border-btn btn-primary edit-btn mr-auto ml-auto w-100 mb-3 "
+        className="btn no-border-btn btn-primary edit-btn mr-auto ml-auto mb-3 "
         onClick={openModal}
       >
         Edit Profile
