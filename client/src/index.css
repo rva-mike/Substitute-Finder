@@ -129,7 +129,7 @@ nav {
 }
 
 nav a {
-  padding: 7px;
+  padding: 5px;
   margin: 0 15px;
   /* transition: all 0.2s; */
   text-decoration: none;
@@ -153,7 +153,6 @@ nav a:focus {
   font-weight: 100 !important;
   font-size: 14px !important;
   margin-top: -5px;
-  margin-bottom: 1px;
   color: white !important;
 }
 
@@ -1096,7 +1095,7 @@ input {
 @media screen and (min-width: 200px) {
   header {
     text-align: center;
-    padding-bottom: 5px !important;
+    padding-bottom: 7px !important;
   }
 
   /* nav a {
@@ -1106,10 +1105,10 @@ input {
   .list-heading {
     text-align: center;
   }
-
+/* 
   .sub-title {
     margin-bottom: 8px;
-  }
+  } */
 }
 
 @media screen and (max-width: 450px) {
@@ -1140,7 +1139,7 @@ input {
 
   header {
     text-align: center;
-    padding-bottom: 5px !important;
+    padding-bottom: 7px !important;
   }
 
 
@@ -1240,7 +1239,7 @@ input {
 
   header {
     text-align: center;
-    padding-bottom: 5px !important;
+    padding-bottom: 7px !important;
   }
 
  
