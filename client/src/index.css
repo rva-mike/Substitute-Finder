@@ -1127,6 +1127,10 @@ input {
     padding-bottom: 7px !important;
     padding-top: 7px !important;
   }
+
+  .profile-card {
+    width: 80% !important;
+  }
 }
 
 
