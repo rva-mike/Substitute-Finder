@@ -96,9 +96,7 @@ a {
   color: black !important;
 }
 
-a:visited {
-  color: inherit !important;
-}
+
 
 h3 {
   text-align: center;
@@ -155,11 +153,18 @@ nav a:focus {
   font-size: 14px !important;
   margin-top: -5px;
   margin-bottom: 1px;
+  color: white !important;
 }
+
+
+
+
+
 
 
 .github-icon {
   font-size: xx-large;
+  color: white !important;
 }
 
 .github-icon:hover {
@@ -200,6 +205,10 @@ nav a:focus {
 .main-logo:focus {
   color: white !important;
 
+}
+
+.main-logo {
+  color: white !important;
 }
 
 .btn-inline {
@@ -274,6 +283,7 @@ nav a:focus {
 .card-body {
   padding: 1.5% !important;
   font-size: 1.5rem;
+  background-color: white !important;
 }
 
 .job-description {
