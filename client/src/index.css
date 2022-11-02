@@ -1126,6 +1126,7 @@ input {
   header {
     text-align: center;
     padding-bottom: 7px !important;
+    padding-top: 7px !important;
   }
 }
 
