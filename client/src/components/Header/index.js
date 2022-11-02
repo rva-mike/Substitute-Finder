@@ -25,7 +25,7 @@ const Header = () => {
             isVisible={true}
           >
             {/* <h1 className='mb-1 mt-1 main-logo'>Sub At<span className='icon'><FaReact/></span>mic</h1> */}
-            <h1 className="mb-1 main-logo">
+            <h1 className="mb-1 mt-0 main-logo">
               Sub At
               <span>
                 {" "}
