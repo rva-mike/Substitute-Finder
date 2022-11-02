@@ -1131,15 +1131,6 @@ input {
 }
 
 
-@media screen and (max-width: 639px) {
-
-  header {
-    text-align: center;
-    padding-bottom: 7px !important;
-    padding-top: 7px !important;
-  }
-}
-
 
 /* col-sm */
 @media screen and (min-width: 640px) {
