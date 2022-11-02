@@ -129,7 +129,7 @@ nav {
 }
 
 nav a {
-  padding: 6px 10px;
+  padding: 10px;
   margin: 0 15px;
   /* transition: all 0.2s; */
   text-decoration: none;
@@ -1100,6 +1100,10 @@ input {
     text-align: center;
   }
 
+  .nav-bar-links {
+    padding: 5px !important;
+  }
+
 
   .list-heading {
     text-align: center;
@@ -1141,6 +1145,10 @@ input {
     text-align: center;
   }
 
+
+  .nav-bar-links {
+    padding: 5px !important;
+  }
 
   .col-sm-1 {
     flex: 0 0 calc(100% * 1 / 12 - 0.5%);
@@ -1239,6 +1247,11 @@ input {
   header {
     text-align: center;
   }
+
+  .nav-bar-links {
+    padding: 5px !important;
+  }
+
 
   
 
