@@ -36,7 +36,7 @@ const Profile = (props) => {
   }
 
   return (
-    <div className="ml-auto m-auto w-60">
+    <div className="ml-auto m-auto w-80">
       <div className="card">
         <div className="ml-auto mr-auto">{/* <ImageUpload/> */}</div>
         {Auth.loggedIn() && hasDegree && (
