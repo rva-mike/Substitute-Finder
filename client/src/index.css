@@ -1447,6 +1447,7 @@ input {
 
 
 .footer-text {
+  font-size: 15px !important;
   display: flex !important;
   justify-content: center;
   align-items: center !important;
